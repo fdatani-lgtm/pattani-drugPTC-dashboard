@@ -756,6 +756,95 @@
     40%,80% { transform: translateX(6px); }
   }
   .shake { animation: loginShake 0.4s ease; }
+
+  /* ===== REFER BACK NEW STYLES ===== */
+  .rb-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 1.25rem;
+  }
+  .rb-stat-card {
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+    padding: 1rem 0.75rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .rb-stat-icon { width: 22px; height: 22px; border-radius: 50%; margin: 0 auto 5px; }
+  .rb-stat-val { font-size: 28px; font-weight: 700; line-height: 1.1; }
+  .rb-stat-lbl { font-size: 11.5px; color: var(--gray-600); margin-top: 5px; line-height: 1.4; }
+  .sv-blue   { color: #1565c0; }
+  .sv-green  { color: #2e7d32; }
+  .sv-yellow { color: #f9a825; }
+  .sv-red    { color: #c62828; }
+  .sv-purple { color: #6a1b9a; }
+
+  .rb-policy-box {
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .rb-policy-title { font-size: 13.5px; font-weight: 700; color: #1565c0; margin-bottom: 10px; }
+  .rb-policy-rows { display: flex; flex-direction: column; gap: 8px; }
+  .rb-policy-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 12px; border-radius: 8px; font-size: 13px; line-height: 1.4;
+  }
+  .rb-policy-dot { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+  .rb-policy-row-green  { background: #e8f5e9; color: #1b5e20; }
+  .rb-policy-row-yellow { background: #fff3e0; color: #bf360c; }
+  .rb-policy-row-red    { background: #ffebee; color: #7f0000; }
+
+  .rb-tab-group { display: flex; gap: 5px; flex-wrap: wrap; }
+  .rb-tab {
+    border: 1.5px solid #bbdefb; background: #fff; color: #1565c0;
+    border-radius: 20px; padding: 6px 14px;
+    font-family: var(--font); font-size: 12.5px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s; white-space: nowrap;
+  }
+  .rb-tab:hover { background: #e3f2fd; }
+  .rb-active-all  { background: #1565c0 !important; color: #fff !important; border-color: #1565c0 !important; }
+  .rb-active-green  { background: #2e7d32 !important; color: #fff !important; border-color: #2e7d32 !important; }
+  .rb-active-yellow { background: #f9a825 !important; color: #fff !important; border-color: #f9a825 !important; }
+  .rb-active-red    { background: #c62828 !important; color: #fff !important; border-color: #c62828 !important; }
+  .rb-active-due    { background: #6a1b9a !important; color: #fff !important; border-color: #6a1b9a !important; }
+
+  .rb-search-input {
+    flex: 1; min-width: 180px;
+    border: 1.5px solid #bbdefb; border-radius: 8px;
+    padding: 8px 14px; font-family: var(--font); font-size: 13.5px;
+    outline: none; color: #1565c0;
+  }
+  .rb-search-input:focus { border-color: #1565c0; box-shadow: 0 0 0 3px rgba(21,101,192,0.12); }
+
+  .rb-cat-info {
+    border-radius: 8px; padding: 10px 14px; font-size: 12.5px; line-height: 1.5;
+  }
+  .rb-cat-info-green  { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #2e7d32; }
+  .rb-cat-info-yellow { background: #fff3e0; color: #f9a825; border-left: 4px solid #f9a825; }
+  .rb-cat-info-red    { background: #ffebee; color: #c62828; border-left: 4px solid #c62828; }
+  .rb-cat-info-due    { background: #f3e5f5; color: #6a1b9a; border-left: 4px solid #6a1b9a; }
+
+  .rb-table-count { font-size: 12px; color: var(--gray-600); background: #e3f2fd; border-radius: 12px; padding: 2px 10px; }
+  .rb-cat-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    border-radius: 12px; padding: 3px 10px;
+    font-size: 11.5px; font-weight: 600; white-space: nowrap;
+  }
+  .rb-badge-green  { background: #e8f5e9; color: #2e7d32; }
+  .rb-badge-yellow { background: #fff3e0; color: #f9a825; }
+  .rb-badge-red    { background: #ffebee; color: #c62828; }
+  .rb-badge-due    { background: #f3e5f5; color: #6a1b9a; }
+  .rb-cond-tag {
+    display: inline-block; font-size: 10.5px; color: #f9a825;
+    background: #fff3e0; border-radius: 6px; padding: 1px 7px; margin-top: 3px;
+  }
+  .rb-no-result { text-align: center; padding: 3rem; color: #90a4ae; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -860,11 +949,6 @@
       <!-- STAT CARDS ROW 1: ฐานข้อมูลยา -->
       <div class="section-title">ฐานข้อมูลยาและเวชภัณฑ์</div>
       <div class="stats-grid">
-        <div class="stat-card teal">
-          <div class="stat-label">รายการยา รพ.ปัตตานี</div>
-          <div class="stat-value" id="stat-hosp">1,383</div>
-          <div class="stat-sub">รายการในฐานข้อมูล ปี 2568</div>
-        </div>
         <div class="stat-card blue">
           <div class="stat-label">ยาร่วม 2569</div>
           <div class="stat-value" id="stat-joint">111</div>
@@ -982,6 +1066,7 @@
                 <th rowspan="2" class="th-group">รวมยา</th>
                 <th colspan="2" class="th-group" style="background:#0f6e56;">สัดส่วน ED:NED</th>
                 <th colspan="4" class="th-group" style="background:#185fa5;">เวชภัณฑ์มิใช่ยา</th>
+                <th rowspan="2" class="th-group" style="background:#7b3f00;">รวมทั้งหมด</th>
               </tr>
               <tr>
                 <th>ในบัญชี</th><th>นอกบัญชี</th><th>สมุนไพร(ใน)</th><th>สมุนไพร(นอก)</th>
@@ -994,14 +1079,8 @@
         </div>
       </div>
 
-      <!-- OLD CHARTS ROW kept -->
-      <div class="charts-row">
-        <div class="chart-card">
-          <div class="chart-title">การกระจายตัวราคายา รพ.ปัตตานี (ต่อหน่วย)</div>
-          <div style="position:relative;height:180px;">
-            <canvas id="chartPrice" role="img" aria-label="กราฟแท่งแสดงการกระจายตัวราคายา">ข้อมูลราคายา</canvas>
-          </div>
-        </div>
+      <!-- CHART: Refer back แยกประเภท (เดี่ยว) -->
+      <div class="charts-row" style="grid-template-columns:1fr;">
         <div class="chart-card">
           <div class="chart-title">รายการยา Refer back แยกประเภท</div>
           <div style="position:relative;height:180px;">
@@ -1113,65 +1192,91 @@
       </div>
     </div>
 
-    <!-- PAGE: REFER BACK -->
+    <!-- PAGE: REFER BACK (ปรับปรุงใหม่) -->
     <div class="page" id="page-referback">
-      <div class="tab-row">
-        <button class="tab-btn green active" onclick="showReferTab('green')">
-          🟢 เขียว (92 รายการ)
-        </button>
-        <button class="tab-btn yellow" onclick="showReferTab('yellow')">
-          🟡 เหลือง (53 รายการ)
-        </button>
-        <button class="tab-btn red" onclick="showReferTab('red')">
-          🔴 แดง (11 รายการ)
-        </button>
-        <button class="tab-btn due" onclick="showReferTab('due')">
-          💜 DUE (11 รายการ)
-        </button>
+
+      <!-- STAT CARDS -->
+      <div class="rb-stat-grid">
+        <div class="rb-stat-card"><div class="rb-stat-icon" style="background:#1565c0"></div><div class="rb-stat-val sv-blue">167</div><div class="rb-stat-lbl">รายการยาทั้งหมด</div></div>
+        <div class="rb-stat-card"><div class="rb-stat-icon" style="background:#2e7d32"></div><div class="rb-stat-val sv-green">92</div><div class="rb-stat-lbl">กลุ่มเขียว<br><span style="font-size:10px;font-weight:400">รพช. จัดหายาเอง</span></div></div>
+        <div class="rb-stat-card"><div class="rb-stat-icon" style="background:#fdd835"></div><div class="rb-stat-val sv-yellow">53</div><div class="rb-stat-lbl">กลุ่มเหลือง<br><span style="font-size:10px;font-weight:400">จ่าย 3 วัน</span></div></div>
+        <div class="rb-stat-card"><div class="rb-stat-icon" style="background:#c62828"></div><div class="rb-stat-val sv-red">11</div><div class="rb-stat-lbl">กลุ่มแดง<br><span style="font-size:10px;font-weight:400">จ่ายยาครบ</span></div></div>
+        <div class="rb-stat-card"><div class="rb-stat-icon" style="background:#6a1b9a"></div><div class="rb-stat-val sv-purple">11</div><div class="rb-stat-lbl">DUE<br><span style="font-size:10px;font-weight:400">ยาปฏิชีวนะ</span></div></div>
+        <div class="rb-stat-card"><div class="rb-stat-icon" style="background:#1565c0;opacity:0.5"></div><div class="rb-stat-val sv-blue" id="rb-sFiltered">167</div><div class="rb-stat-lbl">รายการที่แสดง</div></div>
       </div>
 
-      <div class="refer-tab-content active" id="refer-green">
-        <div class="refer-legend green">
-          <strong>🟢 กลุ่มเขียว:</strong> รพ.ปัตตานี ไม่จ่ายให้ในทุกกรณี — โรงพยาบาลชุมชนต้องจัดหายาเอง
+      <!-- POLICY BOX -->
+      <div class="rb-policy-box">
+        <div class="rb-policy-title">📋 สรุปนโยบายการจ่ายยา Refer Back</div>
+        <div class="rb-policy-rows">
+          <div class="rb-policy-row rb-policy-row-green"><div class="rb-policy-dot" style="background:#2e7d32"></div><div><strong>กลุ่มเขียว</strong> — รพ.ปน. ไม่จ่ายยาในทุกกรณี รพ.ชุมชนต้องจัดหายาเอง</div></div>
+          <div class="rb-policy-row rb-policy-row-yellow"><div class="rb-policy-dot" style="background:#fdd835"></div><div><strong>กลุ่มเหลือง</strong> — รพ.ปน. จ่ายยาให้ 3 วันหรือจนถึงวันทำการถัดไป</div></div>
+          <div class="rb-policy-row rb-policy-row-red"><div class="rb-policy-dot" style="background:#c62828"></div><div><strong>กลุ่มแดง</strong> — รพ.ปน. จ่ายยาครบ ตามใบสั่งแพทย์</div></div>
         </div>
-        <div class="search-box" style="margin-bottom:14px;max-width:320px;">
-          <span>🔍</span>
-          <input type="text" id="search-green" placeholder="ค้นหา..." oninput="filterDrugList('green')">
-        </div>
-        <div class="drug-list" id="list-green"></div>
       </div>
 
-      <div class="refer-tab-content" id="refer-yellow">
-        <div class="refer-legend yellow">
-          <strong>🟡 กลุ่มเหลือง:</strong> รพ.ปัตตานี จ่ายยาให้ 3 วัน หรือจ่ายให้ถึงวันทำการ (กรณีหยุดต่อเนื่องหลายวัน)
-        </div>
-        <div class="search-box" style="margin-bottom:14px;max-width:320px;">
-          <span>🔍</span>
-          <input type="text" id="search-yellow" placeholder="ค้นหา..." oninput="filterDrugList('yellow')">
-        </div>
-        <div class="drug-list" id="list-yellow"></div>
+      <!-- NLEM LEGEND -->
+      <div style="background:#fff;border-radius:10px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:0.85rem 1.25rem;margin-bottom:1.25rem;display:flex;align-items:center;flex-wrap:wrap;gap:10px">
+        <span style="font-size:12.5px;font-weight:700;color:#1565c0;margin-right:4px">บัญชียาหลักแห่งชาติ (NLEM 2567):</span>
+        <span style="background:#e3f2fd;color:#0d47a1;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ก</span><span style="font-size:11px;color:#5f6368">ยาจำเป็น</span>
+        <span style="background:#e8f5e9;color:#1b5e20;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ข</span><span style="font-size:11px;color:#5f6368">ต้องมีเกณฑ์กำกับ</span>
+        <span style="background:#fff3e0;color:#e65100;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ค</span><span style="font-size:11px;color:#5f6368">โรคเฉพาะทาง</span>
+        <span style="background:#fce4ec;color:#880e4f;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ง</span><span style="font-size:11px;color:#5f6368">มีเงื่อนไขเฉพาะ</span>
+        <span style="background:#ede7f6;color:#311b92;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี จ(2)</span><span style="font-size:11px;color:#5f6368">ผู้ป่วยที่มีความจำเป็นเฉพาะ</span>
+        <span style="background:#f5f5f5;color:#757575;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">นอกบัญชี</span>
+        <a href="https://ndi.fda.moph.go.th/drug_national" target="_blank" rel="noopener" style="margin-left:auto;font-size:11px;color:#1565c0;text-decoration:none;border:1px solid #bbdefb;border-radius:6px;padding:3px 10px">🔗 ค้นหาบัญชียาที่ ndi.fda.moph.go.th</a>
       </div>
 
-      <div class="refer-tab-content" id="refer-red">
-        <div class="refer-legend red-l">
-          <strong>🔴 กลุ่มแดง:</strong> โรงพยาบาลปัตตานี จ่ายยาครบตามการรักษา
+      <!-- TAB GROUP + SEARCH -->
+      <div style="background:#fff;border-radius:10px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:10px 16px;margin-bottom:1rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div class="rb-tab-group" id="rb-tab-group">
+          <button class="rb-tab rb-active-all" id="rb-tab-all" onclick="rbSetTab('all',this)">ทั้งหมด (167)</button>
+          <button class="rb-tab" id="rb-tab-green" onclick="rbSetTab('เขียว',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2e7d32;margin-right:4px;vertical-align:middle"></span>เขียว (92)</button>
+          <button class="rb-tab" id="rb-tab-yellow" onclick="rbSetTab('เหลือง',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#fdd835;margin-right:4px;vertical-align:middle"></span>เหลือง (53)</button>
+          <button class="rb-tab" id="rb-tab-red" onclick="rbSetTab('แดง',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c62828;margin-right:4px;vertical-align:middle"></span>แดง (11)</button>
+          <button class="rb-tab" id="rb-tab-due" onclick="rbSetTab('DUE',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6a1b9a;margin-right:4px;vertical-align:middle"></span>DUE (11)</button>
         </div>
-        <div class="search-box" style="margin-bottom:14px;max-width:320px;">
-          <span>🔍</span>
-          <input type="text" id="search-red" placeholder="ค้นหา..." oninput="filterDrugList('red')">
-        </div>
-        <div class="drug-list" id="list-red"></div>
+        <input class="rb-search-input" id="rb-searchInput" type="text" placeholder="🔍 พิมพ์ชื่อยาเพื่อค้นหา..." oninput="rbApplyFilter()">
       </div>
 
-      <div class="refer-tab-content" id="refer-due">
-        <div class="refer-legend purple">
-          <strong>💜 DUE — ยาปฏิชีวนะ (Antibiotic DUE) 11 รายการ:</strong> ยาที่ต้องมีการประเมินการใช้ยาก่อนสั่งจ่าย (Drug Use Evaluation)
+      <!-- CAT INFO BOXES -->
+      <div id="rb-info-green" class="rb-cat-info rb-cat-info-green" style="display:none;margin-bottom:1rem;">
+        <strong>🟢 กลุ่มเขียว</strong> — รพ.ปัตตานีไม่จ่ายให้ในทุกกรณี โรงพยาบาลชุมชน (รพช.) ต้องจัดหายาเอง (92 รายการ)
+      </div>
+      <div id="rb-info-yellow" class="rb-cat-info rb-cat-info-yellow" style="display:none;margin-bottom:1rem;">
+        <strong>🟡 กลุ่มเหลือง</strong> — รพ.ปัตตานีจ่ายยาให้ 3 วัน หรือจ่ายให้ถึงวันทำการ กรณีหยุดต่อเนื่องหลายวัน (53 รายการ)
+      </div>
+      <div id="rb-info-red" class="rb-cat-info rb-cat-info-red" style="display:none;margin-bottom:1rem;">
+        <strong>🔴 กลุ่มแดง</strong> — โรงพยาบาลปัตตานีจ่ายยาครบ (11 รายการ)
+      </div>
+      <div id="rb-info-due" class="rb-cat-info rb-cat-info-due" style="display:none;margin-bottom:1rem;">
+        <strong>💊 DUE (Drug Use Evaluation)</strong> — ยาปฏิชีวนะ (Antibiotic DUE) ที่ต้องผ่านกระบวนการประเมินการใช้ยา (11 รายการ)
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-section">
+        <div class="table-header">
+          <span class="table-title" id="rb-tableTitle">รายการยาทั้งหมด</span>
+          <span class="rb-table-count" id="rb-tableCount">167 รายการ</span>
         </div>
-        <div class="search-box" style="margin-bottom:14px;max-width:320px;">
-          <span>🔍</span>
-          <input type="text" id="search-due" placeholder="ค้นหา..." oninput="filterDrugList('due')">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:44px">#</th>
+                <th>ชื่อยา / Drug Name</th>
+                <th style="width:95px">กลุ่ม</th>
+                <th style="width:90px;text-align:center">บัญชียา</th>
+                <th style="width:130px">เงื่อนไข</th>
+              </tr>
+            </thead>
+            <tbody id="rb-tblBody"></tbody>
+          </table>
         </div>
-        <div class="drug-list" id="list-due"></div>
+      </div>
+      <div style="text-align:center;font-size:11.5px;color:var(--gray-600);padding:1rem 0 0.5rem;">
+        รายการยา Refer Back จังหวัดปัตตานี ปีงบประมาณ 2569 | ปรับปรุงวันที่ 9 เมษายน 2569<br>
+        จัดทำโดย กลุ่มงานคุ้มครองผู้บริโภคและเภสัชสาธารณสุข สสจ.ปัตตานี
       </div>
     </div>
 
@@ -1199,7 +1304,6 @@ document.getElementById('currentDate').textContent = new Date().toLocaleDateStri
 });
 
 // Stats
-document.getElementById('stat-hosp').textContent = hospDrugs.length.toLocaleString();
 document.getElementById('stat-joint').textContent = jointDrugs.length.toLocaleString();
 const totalRefer = Object.values(referBack).reduce((a,b) => a+b.length, 0);
 document.getElementById('stat-refer').textContent = totalRefer;
@@ -1210,7 +1314,9 @@ const MGMT = {"hospitals": [{"name": "ปัตตานี", "drug_in": 635, "d
 // ============ HOSPITAL GRID TABLE ============
 function initHospGrid() {
   const body = document.getElementById('hospGridBody');
-  const rows = MGMT.hospitals.map(h => `
+  const rows = MGMT.hospitals.map(h => {
+    const grandTotal = h.total + h.dental + h.medical + h.lab + (h.xray || 0);
+    return `
     <tr>
       <td>รพ.${h.name}</td>
       <td>${h.drug_in}</td>
@@ -1234,17 +1340,19 @@ function initHospGrid() {
       <td>${h.medical}</td>
       <td>${h.lab}</td>
       <td>${h.xray || '-'}</td>
-    </tr>
-  `);
+      <td style="font-weight:700;color:#7b3f00;">${grandTotal}</td>
+    </tr>`;
+  });
   // totals row
   const totals = MGMT.hospitals.reduce((acc, h) => {
     acc.drug_in += h.drug_in; acc.drug_out += h.drug_out;
     acc.herb_in += h.herb_in; acc.herb_out += h.herb_out;
     acc.total += h.total; acc.dental += h.dental;
     acc.medical += h.medical; acc.lab += h.lab;
+    acc.grand += h.total + h.dental + h.medical + h.lab + (h.xray || 0);
     return acc;
-  }, {drug_in:0,drug_out:0,herb_in:0,herb_out:0,total:0,dental:0,medical:0,lab:0});
-  rows.push(`<tr class="total-row"><td>รวมทั้งจังหวัด</td><td>${totals.drug_in}</td><td>${totals.drug_out}</td><td>${totals.herb_in}</td><td>${totals.herb_out}</td><td>${totals.total}</td><td colspan="2" style="text-align:center;">—</td><td>${totals.dental}</td><td>${totals.medical}</td><td>${totals.lab}</td><td>-</td></tr>`);
+  }, {drug_in:0,drug_out:0,herb_in:0,herb_out:0,total:0,dental:0,medical:0,lab:0,grand:0});
+  rows.push(`<tr class="total-row"><td>รวมทั้งจังหวัด</td><td>${totals.drug_in}</td><td>${totals.drug_out}</td><td>${totals.herb_in}</td><td>${totals.herb_out}</td><td>${totals.total}</td><td colspan="2" style="text-align:center;">—</td><td>${totals.dental}</td><td>${totals.medical}</td><td>${totals.lab}</td><td>-</td><td style="font-weight:700;color:#7b3f00;">${totals.grand}</td></tr>`);
   body.innerHTML = rows.join('');
 }
 
@@ -1396,38 +1504,6 @@ function initCharts() {
     }
   });
 
-  // Price distribution
-  const priceRanges = { '<100': 0, '100-500': 0, '500-1000': 0, '1000-5000': 0, '>5000': 0 };
-  hospDrugs.forEach(d => {
-    const p = d.price;
-    if (typeof p !== 'number') return;
-    if (p < 100) priceRanges['<100']++;
-    else if (p < 500) priceRanges['100-500']++;
-    else if (p < 1000) priceRanges['500-1000']++;
-    else if (p < 5000) priceRanges['1000-5000']++;
-    else priceRanges['>5000']++;
-  });
-  new Chart(document.getElementById('chartPrice'), {
-    type: 'bar',
-    data: {
-      labels: Object.keys(priceRanges),
-      datasets: [{
-        label: 'จำนวนรายการ',
-        data: Object.values(priceRanges),
-        backgroundColor: ['#9FE1CB','#5DCAA5','#1D9E75','#0F6E56','#085041'],
-        borderRadius: 4
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { beginAtZero: true, ticks: { font: { size: 10 } } },
-        x: { ticks: { font: { size: 10 } } }
-      }
-    }
-  });
-
   // Refer back bar
   new Chart(document.getElementById('chartRefer'), {
     type: 'bar',
@@ -1435,17 +1511,25 @@ function initCharts() {
       labels: ['เขียว\n(ไม่จ่าย)', 'เหลือง\n(จ่าย 3 วัน)', 'แดง\n(จ่ายครบ)', 'DUE\n(ปฏิชีวนะ)'],
       datasets: [{
         label: 'จำนวนรายการ',
-        data: [referBack['เขียว'].length, referBack['เหลือง'].length, referBack['แดง'].length, referBack['DUE'].length],
+        data: [
+          RB_DATA['เขียว'].drugs.length,
+          RB_DATA['เหลือง'].drugs.length,
+          RB_DATA['แดง'].drugs.length,
+          RB_DATA['DUE'].drugs.length
+        ],
         backgroundColor: ['#43a047', '#ffb300', '#e53935', '#7b1fa2'],
         borderRadius: 4
       }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} รายการ` } }
+      },
       scales: {
-        y: { beginAtZero: true, ticks: { font: { size: 10 } } },
-        x: { ticks: { font: { size: 10 } } }
+        y: { beginAtZero: true, ticks: { font: { size: 10 }, stepSize: 20 } },
+        x: { ticks: { font: { size: 11 } } }
       }
     }
   });
@@ -1566,39 +1650,175 @@ function renderJointPage() {
 
 function setJointPage(p) { jointPage = p; renderJointPage(); }
 
-// ============ REFER BACK LISTS ============
-const referMap = {
-  green: { key: 'เขียว', elId: 'list-green', searchId: 'search-green' },
-  yellow: { key: 'เหลือง', elId: 'list-yellow', searchId: 'search-yellow' },
-  red: { key: 'แดง', elId: 'list-red', searchId: 'search-red' },
-  due: { key: 'DUE', elId: 'list-due', searchId: 'search-due' }
+// ============ REFER BACK NEW ============
+const RB_DATA = {
+  "เขียว": {
+    category: "1. รพ.ปน.ไม่จ่ายให้ในทุกกรณี รพช.จัดหายาเอง",
+    drugs: [
+      {no:"1",name:"Acyclovir 400 mg inj."},{no:"2",name:"Adenosine 6 mg/ml inj."},{no:"3",name:"Amikacin 500 mg inj."},
+      {no:"4",name:"Amitriptyline 10,25 mg"},{no:"5",name:"Amoxy-clavulanate IV inj 1.2 g"},{no:"6",name:"Anoro ellipta 62.5/25"},
+      {no:"7",name:"Atorvastatin 40 mg tab"},{no:"8",name:"Augmentin 1 Gm tab"},{no:"9",name:"Avamys"},
+      {no:"10",name:"Azithromycin syr."},{no:"11",name:"Baclofen 10 mg tab"},{no:"12",name:"Benzhexol 5 mg"},
+      {no:"13",name:"Budesonide 200 mcg MDI"},{no:"14",name:"Carvedilol 6.25, 25 mg tab"},{no:"15",name:"Cefazolin 1 Gm"},
+      {no:"16",name:"Cefotaxime 1 Gm iv"},{no:"17",name:"Ceftazidime inj."},{no:"18",name:"Chloramphenicol ear drop"},
+      {no:"19",name:"Chloramphenicol eye drop"},{no:"20",name:"Chloramphenicol eye ointment"},{no:"21",name:"Chlorpromazine 25,100 mg"},
+      {no:"22",name:"Ciprofloxacin 500 mg tab"},{no:"23",name:"Clindamycin 300 mg cap"},{no:"24",name:"Clindamycin 600 mg inj."},
+      {no:"25",name:"Clonazepam 2 mg"},{no:"26",name:"Clozapine 25,100 mg"},{no:"27",name:"Cytotec tab"},
+      {no:"28",name:"Depakine 200 , 500 mg tab"},{no:"29",name:"Dex-oph"},{no:"30",name:"Dextran 40 in NSS"},
+      {no:"31",name:"Diazepam 2 , 5 mg"},{no:"32",name:"Diazepam inj. 10 mg/amp"},{no:"33",name:"Dilantin 50,100 mg"},
+      {no:"34",name:"Dilantin 250 mg/5 ml inj"},{no:"35",name:"Doxazosin 2 , 4 mg tab"},{no:"36",name:"Eltroxin 100 mcg tab"},
+      {no:"37",name:"Enoxaparin 60 mg/0.6 ml inj."},{no:"38",name:"Ezetimibe 10 mg"},{no:"39",name:"Finasteride 5 mg tab"},
+      {no:"40",name:"Fluoxetine 20 mg"},{no:"41",name:"Fluphenazine decanoate 25 , 50 mg/amp"},{no:"42",name:"Gabapentin 100 , 300, 400 mg"},
+      {no:"43",name:"Haloperidol 5 mg tab"},{no:"44",name:"Haloperidol inj. 5 mg/amp"},{no:"45",name:"Hista oph"},
+      {no:"46",name:"Hydralazine inj."},{no:"47",name:"Hydrocortisone inj"},{no:"48",name:"Ibuprofen 200 , 400 mg tab"},
+      {no:"49",name:"INH 100 mg tab"},{no:"50",name:"Iron (Eurofer)"},{no:"51",name:"Levetiracetam 500 mg tab"},
+      {no:"52",name:"Levodopa + benserazide (200 + 50 mg)"},{no:"53",name:"Levofloxacin 500 mg tab"},{no:"54",name:"Levophed 4 mg/4 ml inj"},
+      {no:"55",name:"Lithium carbonate 300 mg"},{no:"56",name:"Loratadine 10 mg tab"},{no:"57",name:"Lorazepam 2 mg"},
+      {no:"58",name:"Manidipine 20 mg tab"},{no:"59",name:"Metoprolol 100 mg tab"},{no:"60",name:"Montelukast 10 mg tab"},
+      {no:"61",name:"Monteluklast 4 mg granule"},{no:"62",name:"Morphine IR 10 mg tab"},{no:"63",name:"Morphine MST 10 mg"},
+      {no:"64",name:"Morphine syrup 10 mg/5ml"},{no:"65",name:"Nicardipine 10 mg inj."},{no:"66",name:"Nifedipine 5 mg cap"},
+      {no:"67",name:"Nifedipine SR 20 mg tab"},{no:"68",name:"Nortriptyline 25 mg"},{no:"69",name:"Omeprazole 20 mg cap"},
+      {no:"70",name:"Opsil tear"},{no:"71",name:"Perphenazine 8 mg"},{no:"72",name:"Phenobarbital 30 mg tab"},
+      {no:"73",name:"Pioglitazone 30 mg tab"},{no:"74",name:"Poly-oph eye drop"},{no:"75",name:"Prednisolone 5 mg tab"},
+      {no:"76",name:"Quetiapine 200 mg"},{no:"77",name:"Risperidone 1 , 2 mg tab"},{no:"78",name:"Seretide accuhaler 50/250"},
+      {no:"79",name:"Seretide Evohaler 25/125"},{no:"80",name:"Seretide Evohaler 25/250"},{no:"81",name:"Sertraline 50 mg"},
+      {no:"82",name:"Spiriva handihalor"},{no:"83",name:"Streptokinase 1.5 mu inj."},{no:"84",name:"Symbicort 4.5/160"},
+      {no:"85",name:"Tenofovir alafenamide 25 mg"},{no:"86",name:"Terramycin eye ointment"},{no:"87",name:"Tramadol 50 cap"},
+      {no:"88",name:"Ventolin 100 mcg MDI"},{no:"89",name:"Verapamil 40 mg tab"},{no:"90",name:"Voluven"},
+      {no:"91",name:"Warfarin 1, 3, 5 mg tab"},{no:"92",name:"ยาตามคู่มือจิตเวชที่แจกแล้ว"}
+    ]
+  },
+  "เหลือง": {
+    category: "2. รพ.ปน.จ่ายยาให้ 3 วัน หรือ จ่ายให้ถึงวันทำการ",
+    drugs: [
+      {no:"1",name:"Alfacalcidol 1 mcg"},{no:"2",name:"Alfuzosin 10 mg"},{no:"3",name:"Amiodarone 200 mg tab"},
+      {no:"4",name:"Apixaban 5 mg tab*"},{no:"5",name:"Bemiparin inj. 5000, 7500 IU"},{no:"6",name:"Benzathine Penicillin"},
+      {no:"7",name:"Bisoprolol 2.5 mg tab"},{no:"8",name:"Calciferol (vit D2) 20,000 IU cap"},{no:"9",name:"Calcitriol (vit D3) 0.25 mcg cap"},
+      {no:"10",name:"Cefdinir syr."},{no:"11",name:"Ciprofloxacin 200 mg inj"},{no:"12",name:"Clonazepam 0.5 mg"},
+      {no:"13",name:"Cycloprogynova tab"},{no:"14",name:"Dabigatran 110 mg tab*"},{no:"15",name:"Depakin syr."},
+      {no:"16",name:"Dilantin syr. 25mg/ml"},{no:"17",name:"Donepezil 10 mg",cond:"มีเงื่อนไข: สั่งโดยแพทย์ neuromed และจิตแพทย์"},{no:"18",name:"Duratocin inj."},
+      {no:"19",name:"Edoxaban 60 mg tab*"},{no:"20",name:"Erythropoietin"},
+      {no:"21",name:"Espogen 3000,4000 iu"},{no:"22",name:"Febuxostat 80 mg tab"},{no:"23",name:"Fenofibrate 300 mg"},
+      {no:"24",name:"Fentanyl transdermal patch 25 mcg/hr"},{no:"25",name:"Filgrastim 300 mcg inj."},{no:"26",name:"Flixotide MDI"},
+      {no:"27",name:"Fondaparinux inj."},{no:"28",name:"HBIG 180 iu/ml inj."},{no:"29",name:"Hydroxy chloroquine 200 mg"},
+      {no:"30",name:"Hydroxyurea 500 mg"},{no:"31",name:"Insulatard penfill"},{no:"32",name:"Mixtard penfill"},
+      {no:"33",name:"KCl syrup 20 mEq/15 ml (500 mg/5ml)"},{no:"34",name:"Lamotrigine 100 mg"},{no:"35",name:"Mecobalamine 500 mcg"},
+      {no:"36",name:"Methotrexate 2.5 mg"},{no:"37",name:"Mianserin 10,30 mg"},{no:"38",name:"MTV drop"},
+      {no:"39",name:"Oxymetholone 50 mg"},{no:"40",name:"Perphenazine 4,16 mg"},{no:"41",name:"Phenobarbital inj."},
+      {no:"42",name:"Pyridostigmine 60 mg"},{no:"43",name:"Ritalin 10 mg"},{no:"44",name:"Ropinirole PR 2 mg"},
+      {no:"45",name:"Seretide accuhaler 50/500"},{no:"46",name:"Sulfasalazine 500 mg"},{no:"47",name:"Tetracaine eye solution"},
+      {no:"48",name:"Ticagrelor 90 mg"},{no:"49",name:"Topiramate 50 mg"},{no:"50",name:"Trazodone 50 mg"},
+      {no:"51",name:"Trimetazidine 35 mg"},{no:"52",name:"Valsartan 160 mg tab"},{no:"53",name:"Vit E drop"}
+    ]
+  },
+  "แดง": {
+    category: "3. โรงพยาบาลปัตตานี จ่ายยาครบ",
+    drugs: [
+      {no:"1",name:"Augmentin 2.2 Gm inj."},{no:"2",name:"Azathioprine 50 mg"},{no:"3",name:"DAT (Diptheria antitoxin)"},
+      {no:"4",name:"Ephedrine drop"},{no:"5",name:"Heparin 25,000 unit/5ml"},{no:"6",name:"Kapanol 20 mg tab (Morphine SR capsule)"},
+      {no:"7",name:"Phenobarbital syr. 10 mg/ml"},{no:"8",name:"Shohl's solution"},
+      {no:"9",name:"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)"},{no:"10",name:"Tarivid ear drop (Ofloxacin)"},
+      {no:"11",name:"Tear naturale ED หลอด"}
+    ]
+  },
+  "DUE": {
+    category: "ยาปฏิชีวนะ (Antibiotic DUE) 11 รายการ",
+    drugs: [
+      {no:"1",name:"Amikacin 500 mg inj."},{no:"2",name:"Ampicillin 1000 + Sulbactam 500 mg"},
+      {no:"3",name:"Colistin 150 mg inj."},{no:"4",name:"Ertapenam 1 g"},
+      {no:"5",name:"Fosfomycin 2 Gm inj."},{no:"6",name:"Levofloxacin 750 mg inj."},
+      {no:"7",name:"Meropenem 500 , 1000 mg inj."},{no:"8",name:"Sulbactam 2 Gm inj."},
+      {no:"9",name:"Cefoperazone sodium+Sulbactam sodium, sterile pwdr (500 mg+500 mg)/vial"},
+      {no:"10",name:"Tazocin 4.5 gm inj."},{no:"11",name:"Vancomycin 1 Gm inj."}
+    ]
+  }
 };
 
+const RB_META = {
+  'เขียว':  { badge:'rb-badge-green',  dot:'#2e7d32', label:'เขียว',  cond:'รพช. จัดหายาเอง',       cls:'rb-active-green',  info:'rb-info-green'  },
+  'เหลือง': { badge:'rb-badge-yellow', dot:'#fdd835', label:'เหลือง', cond:'จ่าย 3 วัน',             cls:'rb-active-yellow', info:'rb-info-yellow' },
+  'แดง':    { badge:'rb-badge-red',    dot:'#c62828', label:'แดง',    cond:'จ่ายยาครบ',              cls:'rb-active-red',    info:'rb-info-red'    },
+  'DUE':    { badge:'rb-badge-due',    dot:'#6a1b9a', label:'DUE',    cond:'ต้องผ่านกระบวนการ DUE',  cls:'rb-active-due',    info:'rb-info-due'    }
+};
+
+const RB_NLEM = {"Finasteride 5 mg tab":["ง"],"Nifedipine 5 mg cap":["นอกบัญชี"],"Poly-oph eye drop":["นอกบัญชี"],"Eltroxin 100 mcg tab":["ก"],"Amitriptyline 10,25 mg":["ก"],"Dextran 40 in NSS":["นอกบัญชี"],"Symbicort 4.5/160":["ค"],"Topiramate 50 mg":["ง"],"Edoxaban 60 mg tab*":["นอกบัญชี"],"Chlorpromazine 25,100 mg":["ก"],"Seretide accuhaler 50/250":["ค"],"Cycloprogynova tab":["ข"],"Meropenem 500 , 1000 mg inj.":["ง"],"Phenobarbital 30 mg tab":["ก"],"Espogen 3000,4000 iu":["จ(2)"],"Phenobarbital syr. 10 mg/ml":["ง"],"Enoxaparin 60 mg/0.6 ml inj.":["ค"],"Colistin 150 mg inj.":["ง"],"Lorazepam 2 mg":["ก"],"Calciferol (vit D2) 20,000 IU cap":["ก"],"Levodopa + benserazide (200 + 50 mg)":["ก"],"Augmentin 2.2 Gm inj.":["ค"],"Ampicillin 1000 + Sulbactam 500 mg":["ค"],"Benzathine Penicillin":["ก"],"Haloperidol 5 mg tab":["ก"],"Nifedipine SR 20 mg tab":["ง"],"Vancomycin 1 Gm inj.":["ง"],"Dilantin syr. 25mg/ml":["ก"],"Tazocin 4.5 gm inj.":["ง"],"Ciprofloxacin 200 mg inj":["ง"],"Ticagrelor 90 mg":["ง"],"Dabigatran 110 mg tab*":["นอกบัญชี"],"Azathioprine 50 mg":["ค"],"Tarivid ear drop (Ofloxacin)":["ค"],"Tenofovir alafenamide 25 mg":["ง"],"Montelukast 10 mg tab":["ค"],"Loratadine 10 mg tab":["ก"],"Valsartan 160 mg tab":["นอกบัญชี"],"Mianserin 10,30 mg":["ข"],"DAT (Diptheria antitoxin)":["ก"],"Anoro ellipta 62.5/25":["นอกบัญชี"],"Ritalin 10 mg":["ค"],"Benzhexol 5 mg":["ก"],"Ertapenam 1 g":["ง"],"Dex-oph":["ก"],"Trimetazidine 35 mg":["นอกบัญชี"],"Donepezil 10 mg":["จ(2)"],"Hydrocortisone inj":["ก"],"Monteluklast 4 mg granule":["ค"],"Clozapine 25,100 mg":["ค"],"Risperidone 1 , 2 mg tab":["ข"],"Ephedrine drop":["ก"],"Erythropoietin":["จ(2)"],"Chloramphenicol ear drop":["ค"],"Perphenazine 8 mg":["ก"],"Pioglitazone 30 mg tab":["ง"],"Chloramphenicol eye ointment":["ค"],"Shohl's solution":["ก"],"Prednisolone 5 mg tab":["ก"],"Ventolin 100 mcg MDI":["ก"],"Oxymetholone 50 mg":["ข"],"Omeprazole 20 mg cap":["ก"],"Levofloxacin 750 mg inj.":["ง"],"Fluoxetine 20 mg":["ก"],"INH 100 mg tab":["ก"],"HBIG 180 iu/ml inj.":["ค"],"Atorvastatin 40 mg tab":["ข"],"Tear naturale ED หลอด":["นอกบัญชี"],"Ceftazidime inj.":["ค"],"Cefoperazone sodium+Sulbactam sodium, sterile pwdr (500 mg+500 mg)/vial":["ง"],"Seretide accuhaler 50/500":["ค"],"Avamys":["ค"],"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)":["นอกบัญชี"],"Manidipine 20 mg tab":["ข"],"Clonazepam 2 mg":["ข"],"Adenosine 6 mg/ml inj.":["ก"],"Voluven":["ง"],"Cefdinir syr.":["นอกบัญชี"],"Opsil tear":["นอกบัญชี"],"Hydroxyurea 500 mg":["ค"],"Ezetimibe 10 mg":["ง"],"Nicardipine 10 mg inj.":["ค"],"Terramycin eye ointment":["นอกบัญชี"],"Duratocin inj.":["ก"],"KCl syrup 20 mEq/15 ml (500 mg/5ml)":["ก"],"Sulbactam 2 Gm inj.":["ง"],"Fentanyl transdermal patch 25 mcg/hr":["ค"],"Mecobalamine 500 mcg":["นอกบัญชี"],"Sulfasalazine 500 mg":["ค"],"Iron (Eurofer)":["ค"],"Levophed 4 mg/4 ml inj":["ก"],"Insulatard penfill":["ก"],"Methotrexate 2.5 mg":["ค"],"Gabapentin 100 , 300, 400 mg":["ง"],"Hydralazine inj.":["ก"],"Verapamil 40 mg tab":["ก"],"Azithromycin syr.":["ง"],"Fosfomycin 2 Gm inj.":["ง"],"Ibuprofen 200 , 400 mg tab":["ก"],"Metoprolol 100 mg tab":["ก"],"Tetracaine eye solution":["ก"],"Depakin syr.":["ก"],"Perphenazine 4,16 mg":["ก"],"Acyclovir 400 mg inj.":["ค"],"Diazepam 2 , 5 mg":["ก"],"Amoxy-clavulanate IV inj 1.2 g":["ค"],"Bisoprolol 2.5 mg tab":["นอกบัญชี"],"Levetiracetam 500 mg tab":["ง"],"Seretide Evohaler 25/250":["ค"],"MTV drop":["ก"],"Cytotec tab":["จ(1)"],"Carvedilol 6.25, 25 mg tab":["ค"],"ยาตามคู่มือจิตเวชที่แจกแล้ว":["-"],"Mixtard penfill":["ก"],"Ropinirole PR 2 mg":["ง"],"Vit E drop":["นอกบัญชี"],"Dilantin 250 mg/5 ml inj":["ก"],"Hydroxy chloroquine 200 mg":["ข"],"Cefotaxime 1 Gm iv":["ค"],"Alfacalcidol 1 mcg":["นอกบัญชี"],"Spiriva handihalor":["ค"],"Lithium carbonate 300 mg":["ก"],"Warfarin 1, 3, 5 mg tab":["ค"],"Fluphenazine decanoate 25 , 50 mg/amp":["ก"],"Apixaban 5 mg tab*":["นอกบัญชี"],"Calcitriol (vit D3) 0.25 mcg cap":["ค"],"Amiodarone 200 mg tab":["ค"],"Ciprofloxacin 500 mg tab":["ง"],"Morphine IR 10 mg tab":["ค"],"Alfuzosin 10 mg":["ง"],"Febuxostat 80 mg tab":["ง"],"Bemiparin inj. 5000, 7500 IU":["นอกบัญชี"],"Amikacin 500 mg inj.":["ค"],"Clindamycin 300 mg cap":["ข"],"Clindamycin 600 mg inj.":["ข"],"Depakine 200 , 500 mg tab":["ก"],"Doxazosin 2 , 4 mg tab":["ค"],"Levofloxacin 500 mg tab":["ง"],"Diazepam inj. 10 mg/amp":["ก"],"Hista oph":["นอกบัญชี"],"Chloramphenicol eye drop":["ค"],"Phenobarbital inj.":["ก"],"Pyridostigmine 60 mg":["ก"],"Clonazepam 0.5 mg":["ข"],"Fondaparinux inj.":["ง"],"Baclofen 10 mg tab":["ข"],"Filgrastim 300 mcg inj.":["ง"],"Augmentin 1 Gm tab":["ค"],"Sertraline 50 mg":["ข"],"Morphine syrup 10 mg/5ml":["ค"],"Morphine MST 10 mg":["ค"],"Fenofibrate 300 mg":["ค"],"Seretide Evohaler 25/125":["ค"],"Lamotrigine 100 mg":["ค"],"Flixotide MDI":["ค"],"Haloperidol inj. 5 mg/amp":["ก"],"Kapanol 20 mg tab (Morphine SR capsule)":["ค"],"Trazodone 50 mg":["ค"],"Streptokinase 1.5 mu inj.":["ก"],"Dilantin 50,100 mg":["ก"],"Quetiapine 200 mg":["ง"],"Nortriptyline 25 mg":["ก"],"Heparin 25,000 unit/5ml":["ค"],"Cefazolin 1 Gm":["ก"],"Tramadol 50 cap":["ค"],"Budesonide 200 mcg MDI":["ก"]};
+
+let rbAllRows = [];
+let rbCurrentTab = 'all';
+
+function rbBuildAllRows() {
+  rbAllRows = [];
+  for (const [grp, gdata] of Object.entries(RB_DATA)) {
+    gdata.drugs.forEach(d => {
+      rbAllRows.push({ group: grp, no: d.no, name: d.name, cond: d.cond || null, category: gdata.category });
+    });
+  }
+}
+
+function rbSetTab(tab, el) {
+  rbCurrentTab = tab;
+  document.querySelectorAll('.rb-tab').forEach(t => {
+    t.className = 'rb-tab';
+  });
+  const cls = tab === 'all' ? 'rb-active-all' : (RB_META[tab]?.cls || 'rb-active-all');
+  el.classList.add(cls);
+  document.querySelectorAll('.rb-cat-info').forEach(el => el.style.display = 'none');
+  if (tab !== 'all') {
+    const infoId = RB_META[tab]?.info;
+    if (infoId) document.getElementById(infoId).style.display = 'block';
+  }
+  rbApplyFilter();
+}
+
+function rbApplyFilter() {
+  const q = (document.getElementById('rb-searchInput')?.value || '').trim().toLowerCase();
+  let rows = rbCurrentTab === 'all' ? rbAllRows : rbAllRows.filter(r => r.group === rbCurrentTab);
+  if (q) rows = rows.filter(r => r.name.toLowerCase().includes(q));
+  rbRenderTable(rows);
+  if (document.getElementById('rb-sFiltered')) document.getElementById('rb-sFiltered').textContent = rows.length;
+  let title = 'รายการยาทั้งหมด';
+  if (rbCurrentTab !== 'all') title = 'กลุ่ม' + rbCurrentTab + ' — ' + (RB_DATA[rbCurrentTab]?.category || '');
+  document.getElementById('rb-tableTitle').textContent = title;
+  document.getElementById('rb-tableCount').textContent = rows.length + ' รายการ';
+}
+
+function rbRenderTable(rows) {
+  const tbody = document.getElementById('rb-tblBody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="rb-no-result">ไม่พบรายการยาที่ค้นหา</td></tr>';
+    return;
+  }
+  const nlemColors = {
+    'ก':{'bg':'#e3f2fd','fg':'#0d47a1'},'ข':{'bg':'#e8f5e9','fg':'#1b5e20'},
+    'ค':{'bg':'#fff3e0','fg':'#e65100'},'ง':{'bg':'#fce4ec','fg':'#880e4f'},
+    'จ(1)':{'bg':'#f3e5f5','fg':'#4a148c'},'จ(2)':{'bg':'#ede7f6','fg':'#311b92'},
+    'นอกบัญชี':{'bg':'#f5f5f5','fg':'#757575'},'-':{'bg':'#f5f5f5','fg':'#9e9e9e'}
+  };
+  tbody.innerHTML = rows.map((r, i) => {
+    const m = RB_META[r.group];
+    const condHtml = r.cond ? `<br><span class="rb-cond-tag">⚠ ${r.cond}</span>` : '';
+    const nlemCat = (RB_NLEM[r.name] || ['-'])[0];
+    const nc = nlemColors[nlemCat] || nlemColors['-'];
+    const nlemBadge = `<span style="background:${nc.bg};color:${nc.fg};border-radius:10px;padding:2px 9px;font-size:11px;font-weight:600;white-space:nowrap">${nlemCat === '-' ? '-' : nlemCat === 'นอกบัญชี' ? 'นอกบัญชี' : 'บัญชี ' + nlemCat}</span>`;
+    return `<tr>
+      <td style="text-align:center;color:#90a4ae;font-size:12px">${i + 1}</td>
+      <td>${r.name}${condHtml}</td>
+      <td><span class="rb-cat-badge ${m.badge}"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${m.dot};margin-right:5px;vertical-align:middle;flex-shrink:0"></span>${m.label}</span></td>
+      <td style="text-align:center">${nlemBadge}</td>
+      <td style="font-size:12px;color:#5f6368">${m.cond}</td>
+    </tr>`;
+  }).join('');
+}
+
 function initReferLists() {
-  Object.keys(referMap).forEach(tab => renderDrugList(tab));
+  rbBuildAllRows();
+  rbApplyFilter();
 }
 
-function renderDrugList(tab) {
-  const { key, elId, searchId } = referMap[tab];
-  const q = (document.getElementById(searchId)?.value || '').toLowerCase();
-  const drugs = referBack[key].filter(d => !q || d.toLowerCase().includes(q));
-  const el = document.getElementById(elId);
-  el.innerHTML = drugs.map((d, i) => `
-    <div class="drug-pill">
-      <span class="drug-num">${i + 1}</span>
-      <span>${d}</span>
-    </div>
-  `).join('');
-}
-
-function filterDrugList(tab) { renderDrugList(tab); }
-
-function showReferTab(tab) {
-  document.querySelectorAll('.refer-tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('refer-' + tab).classList.add('active');
-  event.currentTarget.classList.add('active');
-}
+// Keep old functions for backward compatibility (no-op)
+function renderDrugList() {}
+function filterDrugList() {}
+function showReferTab() {}
 
 // ============ PAGINATION ============
 function renderPageBtns(prefix, currentPage, totalPages, setPage) {
