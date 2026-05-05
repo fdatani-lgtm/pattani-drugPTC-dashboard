@@ -1216,24 +1216,66 @@
       </div>
 
       <!-- NLEM LEGEND -->
-      <div style="background:#fff;border-radius:10px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:0.85rem 1.25rem;margin-bottom:1.25rem;display:flex;align-items:center;flex-wrap:wrap;gap:10px">
-        <span style="font-size:12.5px;font-weight:700;color:#1565c0;margin-right:4px">บัญชียาหลักแห่งชาติ (NLEM 2567):</span>
-        <span style="background:#e3f2fd;color:#0d47a1;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ก</span><span style="font-size:11px;color:#5f6368">ยาจำเป็น</span>
-        <span style="background:#e8f5e9;color:#1b5e20;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ข</span><span style="font-size:11px;color:#5f6368">ต้องมีเกณฑ์กำกับ</span>
-        <span style="background:#fff3e0;color:#e65100;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ค</span><span style="font-size:11px;color:#5f6368">โรคเฉพาะทาง</span>
-        <span style="background:#fce4ec;color:#880e4f;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี ง</span><span style="font-size:11px;color:#5f6368">มีเงื่อนไขเฉพาะ</span>
-        <span style="background:#ede7f6;color:#311b92;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">บัญชี จ(2)</span><span style="font-size:11px;color:#5f6368">ผู้ป่วยที่มีความจำเป็นเฉพาะ</span>
-        <span style="background:#f5f5f5;color:#757575;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:700">นอกบัญชี</span>
-        <a href="https://ndi.fda.moph.go.th/drug_national" target="_blank" rel="noopener" style="margin-left:auto;font-size:11px;color:#1565c0;text-decoration:none;border:1px solid #bbdefb;border-radius:6px;padding:3px 10px">🔗 ค้นหาบัญชียาที่ ndi.fda.moph.go.th</a>
+      <div style="background:#fff;border-radius:10px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:0.85rem 1.25rem;margin-bottom:1.25rem;">
+        <!-- หัวข้อ + ลิงก์ -->
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:0.75rem;">
+          <span style="font-size:13px;font-weight:700;color:#1565c0;">บัญชียาหลักแห่งชาติ (NLEM 2569)</span>
+          <a href="https://ndi.fda.moph.go.th/drug_national" target="_blank" rel="noopener" style="font-size:11px;color:#1565c0;text-decoration:none;border:1px solid #bbdefb;border-radius:6px;padding:3px 10px">🔗 ค้นหาบัญชียาที่ ndi.fda.moph.go.th</a>
+        </div>
+        <!-- ตารางเทียบชื่อใหม่ vs ชื่อเดิม -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;">
+          <!-- บัญชี ก/ข = b -->
+          <div style="display:flex;align-items:center;gap:8px;background:#f8fbff;border-radius:8px;padding:6px 10px;border:1px solid #e3f2fd;">
+            <span style="background:#1565c0;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;min-width:28px;text-align:center">b</span>
+            <span style="font-size:10px;color:#90a4ae;margin:0 2px">→</span>
+            <span style="background:#e3f2fd;color:#0d47a1;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700">บัญชี ก / ข</span>
+            <span style="font-size:11px;color:#5f6368">ยาพื้นฐาน (basic list)</span>
+          </div>
+          <!-- บัญชี ค = s -->
+          <div style="display:flex;align-items:center;gap:8px;background:#fffaf5;border-radius:8px;padding:6px 10px;border:1px solid #ffe0b2;">
+            <span style="background:#e65100;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;min-width:28px;text-align:center">s</span>
+            <span style="font-size:10px;color:#90a4ae;margin:0 2px">→</span>
+            <span style="background:#fff3e0;color:#e65100;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700">บัญชี ค</span>
+            <span style="font-size:11px;color:#5f6368">ยาทางเลือก (supplemental list)</span>
+          </div>
+          <!-- บัญชี ง = ex -->
+          <div style="display:flex;align-items:center;gap:8px;background:#fff8fa;border-radius:8px;padding:6px 10px;border:1px solid #fce4ec;">
+            <span style="background:#880e4f;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;min-width:28px;text-align:center">ex</span>
+            <span style="font-size:10px;color:#90a4ae;margin:0 2px">→</span>
+            <span style="background:#fce4ec;color:#880e4f;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700">บัญชี ง</span>
+            <span style="font-size:11px;color:#5f6368">ยาเฉพาะโรค (exclusive list)</span>
+          </div>
+          <!-- บัญชี จ(1) = R1 -->
+          <div style="display:flex;align-items:center;gap:8px;background:#f5f0ff;border-radius:8px;padding:6px 10px;border:1px solid #d1c4e9;">
+            <span style="background:#4a148c;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;min-width:28px;text-align:center">R1</span>
+            <span style="font-size:10px;color:#90a4ae;margin:0 2px">→</span>
+            <span style="background:#ede7f6;color:#4a148c;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700">บัญชี จ(1)</span>
+            <span style="font-size:11px;color:#5f6368">โครงการพิเศษของรัฐ (restricted list 1)</span>
+          </div>
+          <!-- บัญชี จ(2) = R2 -->
+          <div style="display:flex;align-items:center;gap:8px;background:#f0eaff;border-radius:8px;padding:6px 10px;border:1px solid #b39ddb;">
+            <span style="background:#311b92;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;min-width:28px;text-align:center">R2</span>
+            <span style="font-size:10px;color:#90a4ae;margin:0 2px">→</span>
+            <span style="background:#ede7f6;color:#311b92;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700">บัญชี จ(2)</span>
+            <span style="font-size:11px;color:#5f6368">ผู้ป่วยที่มีความจำเป็นเฉพาะ (restricted list 2)</span>
+          </div>
+          <!-- นอกบัญชี -->
+          <div style="display:flex;align-items:center;gap:8px;background:#fafafa;border-radius:8px;padding:6px 10px;border:1px solid #e0e0e0;">
+            <span style="background:#757575;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;min-width:28px;text-align:center">—</span>
+            <span style="font-size:10px;color:#90a4ae;margin:0 2px">→</span>
+            <span style="background:#f5f5f5;color:#757575;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700">นอกบัญชี</span>
+            <span style="font-size:11px;color:#5f6368">ยานอกบัญชียาหลักแห่งชาติ</span>
+          </div>
+        </div>
       </div>
 
       <!-- TAB GROUP + SEARCH -->
       <div style="background:#fff;border-radius:10px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:10px 16px;margin-bottom:1rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
         <div class="rb-tab-group" id="rb-tab-group">
           <button class="rb-tab rb-active-all" id="rb-tab-all" onclick="rbSetTab('all',this)">ทั้งหมด (167)</button>
-          <button class="rb-tab" id="rb-tab-green" onclick="rbSetTab('เขียว',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2e7d32;margin-right:4px;vertical-align:middle"></span>เขียว (92)</button>
+          <button class="rb-tab" id="rb-tab-green" onclick="rbSetTab('เขียว',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2e7d32;margin-right:4px;vertical-align:middle"></span>เขียว (93)</button>
           <button class="rb-tab" id="rb-tab-yellow" onclick="rbSetTab('เหลือง',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#fdd835;margin-right:4px;vertical-align:middle"></span>เหลือง (53)</button>
-          <button class="rb-tab" id="rb-tab-red" onclick="rbSetTab('แดง',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c62828;margin-right:4px;vertical-align:middle"></span>แดง (11)</button>
+          <button class="rb-tab" id="rb-tab-red" onclick="rbSetTab('แดง',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c62828;margin-right:4px;vertical-align:middle"></span>แดง (10)</button>
           <button class="rb-tab" id="rb-tab-due" onclick="rbSetTab('DUE',this)"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6a1b9a;margin-right:4px;vertical-align:middle"></span>DUE (11)</button>
         </div>
         <input class="rb-search-input" id="rb-searchInput" type="text" placeholder="🔍 พิมพ์ชื่อยาเพื่อค้นหา..." oninput="rbApplyFilter()">
@@ -1241,13 +1283,13 @@
 
       <!-- CAT INFO BOXES -->
       <div id="rb-info-green" class="rb-cat-info rb-cat-info-green" style="display:none;margin-bottom:1rem;">
-        <strong>🟢 กลุ่มเขียว</strong> — รพ.ปัตตานีไม่จ่ายให้ในทุกกรณี โรงพยาบาลชุมชน (รพช.) ต้องจัดหายาเอง (92 รายการ)
+        <strong>🟢 กลุ่มเขียว</strong> — รพ.ปัตตานีไม่จ่ายให้ในทุกกรณี โรงพยาบาลชุมชน (รพช.) ต้องจัดหายาเอง (93 รายการ)
       </div>
       <div id="rb-info-yellow" class="rb-cat-info rb-cat-info-yellow" style="display:none;margin-bottom:1rem;">
         <strong>🟡 กลุ่มเหลือง</strong> — รพ.ปัตตานีจ่ายยาให้ 3 วัน หรือจ่ายให้ถึงวันทำการ กรณีหยุดต่อเนื่องหลายวัน (53 รายการ)
       </div>
       <div id="rb-info-red" class="rb-cat-info rb-cat-info-red" style="display:none;margin-bottom:1rem;">
-        <strong>🔴 กลุ่มแดง</strong> — โรงพยาบาลปัตตานีจ่ายยาครบ (11 รายการ)
+        <strong>🔴 กลุ่มแดง</strong> — โรงพยาบาลปัตตานีจ่ายยาครบ (10 รายการ)
       </div>
       <div id="rb-info-due" class="rb-cat-info rb-cat-info-due" style="display:none;margin-bottom:1rem;">
         <strong>💊 DUE (Drug Use Evaluation)</strong> — ยาปฏิชีวนะ (Antibiotic DUE) ที่ต้องผ่านกระบวนการประเมินการใช้ยา (11 รายการ)
@@ -1266,7 +1308,8 @@
                 <th style="width:44px">#</th>
                 <th>ชื่อยา / Drug Name</th>
                 <th style="width:95px">กลุ่ม</th>
-                <th style="width:90px;text-align:center">บัญชียา</th>
+                <th style="width:90px;text-align:center">บัญชียา<br><span style="font-weight:400;font-size:10px;color:#90a4ae">(ชื่อเดิม)</span></th>
+                <th style="width:80px;text-align:center">บัญชียา 2569<br><span style="font-weight:400;font-size:10px;color:#90a4ae">(ชื่อใหม่)</span></th>
                 <th style="width:130px">เงื่อนไข</th>
               </tr>
             </thead>
@@ -1656,16 +1699,16 @@ const RB_DATA = {
     category: "1. รพ.ปน.ไม่จ่ายให้ในทุกกรณี รพช.จัดหายาเอง",
     drugs: [
       {no:"1",name:"Acyclovir 400 mg inj."},{no:"2",name:"Adenosine 6 mg/ml inj."},{no:"3",name:"Amikacin 500 mg inj."},
-      {no:"4",name:"Amitriptyline 10,25 mg"},{no:"5",name:"Amoxy-clavulanate IV inj 1.2 g"},{no:"6",name:"Anoro ellipta 62.5/25"},
+      {no:"4",name:"Amitriptyline 10,25 mg",cond:"⭐ เพิ่มขนาดยาใหม่ปี 2569"},{no:"5",name:"Amoxy-clavulanate IV inj 1.2 g"},{no:"6",name:"Anoro ellipta 62.5/25"},
       {no:"7",name:"Atorvastatin 40 mg tab"},{no:"8",name:"Augmentin 1 Gm tab"},{no:"9",name:"Avamys"},
       {no:"10",name:"Azithromycin syr."},{no:"11",name:"Baclofen 10 mg tab"},{no:"12",name:"Benzhexol 5 mg"},
       {no:"13",name:"Budesonide 200 mcg MDI"},{no:"14",name:"Carvedilol 6.25, 25 mg tab"},{no:"15",name:"Cefazolin 1 Gm"},
       {no:"16",name:"Cefotaxime 1 Gm iv"},{no:"17",name:"Ceftazidime inj."},{no:"18",name:"Chloramphenicol ear drop"},
       {no:"19",name:"Chloramphenicol eye drop"},{no:"20",name:"Chloramphenicol eye ointment"},{no:"21",name:"Chlorpromazine 25,100 mg"},
       {no:"22",name:"Ciprofloxacin 500 mg tab"},{no:"23",name:"Clindamycin 300 mg cap"},{no:"24",name:"Clindamycin 600 mg inj."},
-      {no:"25",name:"Clonazepam 2 mg"},{no:"26",name:"Clozapine 25,100 mg"},{no:"27",name:"Cytotec tab"},
-      {no:"28",name:"Depakine 200 , 500 mg tab"},{no:"29",name:"Dex-oph"},{no:"30",name:"Dextran 40 in NSS"},
-      {no:"31",name:"Diazepam 2 , 5 mg"},{no:"32",name:"Diazepam inj. 10 mg/amp"},{no:"33",name:"Dilantin 50,100 mg"},
+      {no:"25",name:"Clonazepam 2 mg"},{no:"26",name:"Clozapine 25,100 mg",cond:"⭐ เพิ่มขนาดยาใหม่ปี 2569"},{no:"27",name:"Cytotec tab"},
+      {no:"28",name:"Depakine 200 , 500 mg tab"},{no:"29",name:"Dex-oph"},{no:"30",name:"Dextran 40 in NSS",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},
+      {no:"31",name:"Diazepam 2 , 5 mg"},{no:"32",name:"Diazepam inj. 10 mg/amp"},{no:"33",name:"Dilantin 50,100 mg",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},
       {no:"34",name:"Dilantin 250 mg/5 ml inj"},{no:"35",name:"Doxazosin 2 , 4 mg tab"},{no:"36",name:"Eltroxin 100 mcg tab"},
       {no:"37",name:"Enoxaparin 60 mg/0.6 ml inj."},{no:"38",name:"Ezetimibe 10 mg"},{no:"39",name:"Finasteride 5 mg tab"},
       {no:"40",name:"Fluoxetine 20 mg"},{no:"41",name:"Fluphenazine decanoate 25 , 50 mg/amp"},{no:"42",name:"Gabapentin 100 , 300, 400 mg"},
@@ -1681,44 +1724,45 @@ const RB_DATA = {
       {no:"70",name:"Opsil tear"},{no:"71",name:"Perphenazine 8 mg"},{no:"72",name:"Phenobarbital 30 mg tab"},
       {no:"73",name:"Pioglitazone 30 mg tab"},{no:"74",name:"Poly-oph eye drop"},{no:"75",name:"Prednisolone 5 mg tab"},
       {no:"76",name:"Quetiapine 200 mg"},{no:"77",name:"Risperidone 1 , 2 mg tab"},{no:"78",name:"Seretide accuhaler 50/250"},
-      {no:"79",name:"Seretide Evohaler 25/125"},{no:"80",name:"Seretide Evohaler 25/250"},{no:"81",name:"Sertraline 50 mg"},
+      {no:"79",name:"Seretide Evohaler 25/125"},{no:"80",name:"Seretide Evohaler 25/250",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},{no:"81",name:"Sertraline 50 mg"},
       {no:"82",name:"Spiriva handihalor"},{no:"83",name:"Streptokinase 1.5 mu inj."},{no:"84",name:"Symbicort 4.5/160"},
       {no:"85",name:"Tenofovir alafenamide 25 mg"},{no:"86",name:"Terramycin eye ointment"},{no:"87",name:"Tramadol 50 cap"},
-      {no:"88",name:"Ventolin 100 mcg MDI"},{no:"89",name:"Verapamil 40 mg tab"},{no:"90",name:"Voluven"},
-      {no:"91",name:"Warfarin 1, 3, 5 mg tab"},{no:"92",name:"ยาตามคู่มือจิตเวชที่แจกแล้ว"}
+      {no:"88",name:"Ventolin 100 mcg MDI"},{no:"89",name:"Verapamil 40 mg tab",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},{no:"90",name:"Voluven"},
+      {no:"91",name:"Warfarin 1, 3, 5 mg tab"},{no:"92",name:"Ropinirole PR 2 mg",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},
+      {no:"93",name:"ยาตามคู่มือจิตเวชที่แจกแล้ว"}
     ]
   },
   "เหลือง": {
     category: "2. รพ.ปน.จ่ายยาให้ 3 วัน หรือ จ่ายให้ถึงวันทำการ",
     drugs: [
-      {no:"1",name:"Alfacalcidol 1 mcg"},{no:"2",name:"Alfuzosin 10 mg"},{no:"3",name:"Amiodarone 200 mg tab"},
+      {no:"1",name:"Alfacalcidol 1 mcg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"2",name:"Alfuzosin 10 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"3",name:"Amiodarone 200 mg tab"},
       {no:"4",name:"Apixaban 5 mg tab*"},{no:"5",name:"Bemiparin inj. 5000, 7500 IU"},{no:"6",name:"Benzathine Penicillin"},
       {no:"7",name:"Bisoprolol 2.5 mg tab"},{no:"8",name:"Calciferol (vit D2) 20,000 IU cap"},{no:"9",name:"Calcitriol (vit D3) 0.25 mcg cap"},
       {no:"10",name:"Cefdinir syr."},{no:"11",name:"Ciprofloxacin 200 mg inj"},{no:"12",name:"Clonazepam 0.5 mg"},
       {no:"13",name:"Cycloprogynova tab"},{no:"14",name:"Dabigatran 110 mg tab*"},{no:"15",name:"Depakin syr."},
       {no:"16",name:"Dilantin syr. 25mg/ml"},{no:"17",name:"Donepezil 10 mg",cond:"มีเงื่อนไข: สั่งโดยแพทย์ neuromed และจิตแพทย์"},{no:"18",name:"Duratocin inj."},
-      {no:"19",name:"Edoxaban 60 mg tab*"},{no:"20",name:"Erythropoietin"},
-      {no:"21",name:"Espogen 3000,4000 iu"},{no:"22",name:"Febuxostat 80 mg tab"},{no:"23",name:"Fenofibrate 300 mg"},
+      {no:"19",name:"Edoxaban 60 mg tab*"},{no:"20",name:"Erythropoietin",cond:"⭐ เพิ่มใหม่ปี 2569"},
+      {no:"21",name:"Espogen 3000,4000 iu",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"22",name:"Febuxostat 80 mg tab"},{no:"23",name:"Fenofibrate 300 mg"},
       {no:"24",name:"Fentanyl transdermal patch 25 mcg/hr"},{no:"25",name:"Filgrastim 300 mcg inj."},{no:"26",name:"Flixotide MDI"},
       {no:"27",name:"Fondaparinux inj."},{no:"28",name:"HBIG 180 iu/ml inj."},{no:"29",name:"Hydroxy chloroquine 200 mg"},
       {no:"30",name:"Hydroxyurea 500 mg"},{no:"31",name:"Insulatard penfill"},{no:"32",name:"Mixtard penfill"},
-      {no:"33",name:"KCl syrup 20 mEq/15 ml (500 mg/5ml)"},{no:"34",name:"Lamotrigine 100 mg"},{no:"35",name:"Mecobalamine 500 mcg"},
-      {no:"36",name:"Methotrexate 2.5 mg"},{no:"37",name:"Mianserin 10,30 mg"},{no:"38",name:"MTV drop"},
-      {no:"39",name:"Oxymetholone 50 mg"},{no:"40",name:"Perphenazine 4,16 mg"},{no:"41",name:"Phenobarbital inj."},
-      {no:"42",name:"Pyridostigmine 60 mg"},{no:"43",name:"Ritalin 10 mg"},{no:"44",name:"Ropinirole PR 2 mg"},
-      {no:"45",name:"Seretide accuhaler 50/500"},{no:"46",name:"Sulfasalazine 500 mg"},{no:"47",name:"Tetracaine eye solution"},
-      {no:"48",name:"Ticagrelor 90 mg"},{no:"49",name:"Topiramate 50 mg"},{no:"50",name:"Trazodone 50 mg"},
-      {no:"51",name:"Trimetazidine 35 mg"},{no:"52",name:"Valsartan 160 mg tab"},{no:"53",name:"Vit E drop"}
-    ]
+      {no:"33",name:"KCl syrup 20 mEq/15 ml (500 mg/5ml)"},{no:"34",name:"Lamotrigine 100 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"35",name:"Mecobalamine 500 mcg",cond:"⭐ เพิ่มใหม่ปี 2569"},
+      {no:"36",name:"Methotrexate 2.5 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"37",name:"Mianserin 10,30 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"38",name:"MTV drop"},
+      {no:"39",name:"Oxymetholone 50 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"40",name:"Perphenazine 4,16 mg",cond:"⭐ เพิ่มขนาดยาใหม่ปี 2569"},{no:"41",name:"Phenobarbital inj."},
+      {no:"42",name:"Pyridostigmine 60 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"43",name:"Ritalin 10 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},
+      {no:"44",name:"Seretide accuhaler 50/500"},{no:"45",name:"Sulfasalazine 500 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"46",name:"Tetracaine eye solution"},
+      {no:"47",name:"Ticagrelor 90 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"48",name:"Topiramate 50 mg"},{no:"49",name:"Trazodone 50 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},
+      {no:"50",name:"Trimetazidine 35 mg"},{no:"51",name:"Valsartan 160 mg tab"},{no:"52",name:"Vit E drop"},
+      {no:"53",name:"DAT (Diptheria antitoxin)",cond:"🔄 ย้ายจากกลุ่มแดง ปี 2569"}]
   },
   "แดง": {
     category: "3. โรงพยาบาลปัตตานี จ่ายยาครบ",
     drugs: [
-      {no:"1",name:"Augmentin 2.2 Gm inj."},{no:"2",name:"Azathioprine 50 mg"},{no:"3",name:"DAT (Diptheria antitoxin)"},
-      {no:"4",name:"Ephedrine drop"},{no:"5",name:"Heparin 25,000 unit/5ml"},{no:"6",name:"Kapanol 20 mg tab (Morphine SR capsule)"},
-      {no:"7",name:"Phenobarbital syr. 10 mg/ml"},{no:"8",name:"Shohl's solution"},
-      {no:"9",name:"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)"},{no:"10",name:"Tarivid ear drop (Ofloxacin)"},
-      {no:"11",name:"Tear naturale ED หลอด"}
+      {no:"1",name:"Augmentin 2.2 Gm inj."},{no:"2",name:"Azathioprine 50 mg"},
+      {no:"3",name:"Ephedrine drop"},{no:"4",name:"Heparin 25,000 unit/5ml"},{no:"5",name:"Kapanol 20 mg tab (Morphine SR capsule)"},
+      {no:"6",name:"Phenobarbital syr. 10 mg/ml"},{no:"7",name:"Shohl's solution"},
+      {no:"8",name:"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)"},{no:"9",name:"Tarivid ear drop (Ofloxacin)"},
+      {no:"10",name:"Tear naturale ED หลอด"}
     ]
   },
   "DUE": {
@@ -1741,7 +1785,7 @@ const RB_META = {
   'DUE':    { badge:'rb-badge-due',    dot:'#6a1b9a', label:'DUE',    cond:'ต้องผ่านกระบวนการ DUE',  cls:'rb-active-due',    info:'rb-info-due'    }
 };
 
-const RB_NLEM = {"Finasteride 5 mg tab":["ง"],"Nifedipine 5 mg cap":["นอกบัญชี"],"Poly-oph eye drop":["นอกบัญชี"],"Eltroxin 100 mcg tab":["ก"],"Amitriptyline 10,25 mg":["ก"],"Dextran 40 in NSS":["นอกบัญชี"],"Symbicort 4.5/160":["ค"],"Topiramate 50 mg":["ง"],"Edoxaban 60 mg tab*":["นอกบัญชี"],"Chlorpromazine 25,100 mg":["ก"],"Seretide accuhaler 50/250":["ค"],"Cycloprogynova tab":["ข"],"Meropenem 500 , 1000 mg inj.":["ง"],"Phenobarbital 30 mg tab":["ก"],"Espogen 3000,4000 iu":["จ(2)"],"Phenobarbital syr. 10 mg/ml":["ง"],"Enoxaparin 60 mg/0.6 ml inj.":["ค"],"Colistin 150 mg inj.":["ง"],"Lorazepam 2 mg":["ก"],"Calciferol (vit D2) 20,000 IU cap":["ก"],"Levodopa + benserazide (200 + 50 mg)":["ก"],"Augmentin 2.2 Gm inj.":["ค"],"Ampicillin 1000 + Sulbactam 500 mg":["ค"],"Benzathine Penicillin":["ก"],"Haloperidol 5 mg tab":["ก"],"Nifedipine SR 20 mg tab":["ง"],"Vancomycin 1 Gm inj.":["ง"],"Dilantin syr. 25mg/ml":["ก"],"Tazocin 4.5 gm inj.":["ง"],"Ciprofloxacin 200 mg inj":["ง"],"Ticagrelor 90 mg":["ง"],"Dabigatran 110 mg tab*":["นอกบัญชี"],"Azathioprine 50 mg":["ค"],"Tarivid ear drop (Ofloxacin)":["ค"],"Tenofovir alafenamide 25 mg":["ง"],"Montelukast 10 mg tab":["ค"],"Loratadine 10 mg tab":["ก"],"Valsartan 160 mg tab":["นอกบัญชี"],"Mianserin 10,30 mg":["ข"],"DAT (Diptheria antitoxin)":["ก"],"Anoro ellipta 62.5/25":["นอกบัญชี"],"Ritalin 10 mg":["ค"],"Benzhexol 5 mg":["ก"],"Ertapenam 1 g":["ง"],"Dex-oph":["ก"],"Trimetazidine 35 mg":["นอกบัญชี"],"Donepezil 10 mg":["จ(2)"],"Hydrocortisone inj":["ก"],"Monteluklast 4 mg granule":["ค"],"Clozapine 25,100 mg":["ค"],"Risperidone 1 , 2 mg tab":["ข"],"Ephedrine drop":["ก"],"Erythropoietin":["จ(2)"],"Chloramphenicol ear drop":["ค"],"Perphenazine 8 mg":["ก"],"Pioglitazone 30 mg tab":["ง"],"Chloramphenicol eye ointment":["ค"],"Shohl's solution":["ก"],"Prednisolone 5 mg tab":["ก"],"Ventolin 100 mcg MDI":["ก"],"Oxymetholone 50 mg":["ข"],"Omeprazole 20 mg cap":["ก"],"Levofloxacin 750 mg inj.":["ง"],"Fluoxetine 20 mg":["ก"],"INH 100 mg tab":["ก"],"HBIG 180 iu/ml inj.":["ค"],"Atorvastatin 40 mg tab":["ข"],"Tear naturale ED หลอด":["นอกบัญชี"],"Ceftazidime inj.":["ค"],"Cefoperazone sodium+Sulbactam sodium, sterile pwdr (500 mg+500 mg)/vial":["ง"],"Seretide accuhaler 50/500":["ค"],"Avamys":["ค"],"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)":["นอกบัญชี"],"Manidipine 20 mg tab":["ข"],"Clonazepam 2 mg":["ข"],"Adenosine 6 mg/ml inj.":["ก"],"Voluven":["ง"],"Cefdinir syr.":["นอกบัญชี"],"Opsil tear":["นอกบัญชี"],"Hydroxyurea 500 mg":["ค"],"Ezetimibe 10 mg":["ง"],"Nicardipine 10 mg inj.":["ค"],"Terramycin eye ointment":["นอกบัญชี"],"Duratocin inj.":["ก"],"KCl syrup 20 mEq/15 ml (500 mg/5ml)":["ก"],"Sulbactam 2 Gm inj.":["ง"],"Fentanyl transdermal patch 25 mcg/hr":["ค"],"Mecobalamine 500 mcg":["นอกบัญชี"],"Sulfasalazine 500 mg":["ค"],"Iron (Eurofer)":["ค"],"Levophed 4 mg/4 ml inj":["ก"],"Insulatard penfill":["ก"],"Methotrexate 2.5 mg":["ค"],"Gabapentin 100 , 300, 400 mg":["ง"],"Hydralazine inj.":["ก"],"Verapamil 40 mg tab":["ก"],"Azithromycin syr.":["ง"],"Fosfomycin 2 Gm inj.":["ง"],"Ibuprofen 200 , 400 mg tab":["ก"],"Metoprolol 100 mg tab":["ก"],"Tetracaine eye solution":["ก"],"Depakin syr.":["ก"],"Perphenazine 4,16 mg":["ก"],"Acyclovir 400 mg inj.":["ค"],"Diazepam 2 , 5 mg":["ก"],"Amoxy-clavulanate IV inj 1.2 g":["ค"],"Bisoprolol 2.5 mg tab":["นอกบัญชี"],"Levetiracetam 500 mg tab":["ง"],"Seretide Evohaler 25/250":["ค"],"MTV drop":["ก"],"Cytotec tab":["จ(1)"],"Carvedilol 6.25, 25 mg tab":["ค"],"ยาตามคู่มือจิตเวชที่แจกแล้ว":["-"],"Mixtard penfill":["ก"],"Ropinirole PR 2 mg":["ง"],"Vit E drop":["นอกบัญชี"],"Dilantin 250 mg/5 ml inj":["ก"],"Hydroxy chloroquine 200 mg":["ข"],"Cefotaxime 1 Gm iv":["ค"],"Alfacalcidol 1 mcg":["นอกบัญชี"],"Spiriva handihalor":["ค"],"Lithium carbonate 300 mg":["ก"],"Warfarin 1, 3, 5 mg tab":["ค"],"Fluphenazine decanoate 25 , 50 mg/amp":["ก"],"Apixaban 5 mg tab*":["นอกบัญชี"],"Calcitriol (vit D3) 0.25 mcg cap":["ค"],"Amiodarone 200 mg tab":["ค"],"Ciprofloxacin 500 mg tab":["ง"],"Morphine IR 10 mg tab":["ค"],"Alfuzosin 10 mg":["ง"],"Febuxostat 80 mg tab":["ง"],"Bemiparin inj. 5000, 7500 IU":["นอกบัญชี"],"Amikacin 500 mg inj.":["ค"],"Clindamycin 300 mg cap":["ข"],"Clindamycin 600 mg inj.":["ข"],"Depakine 200 , 500 mg tab":["ก"],"Doxazosin 2 , 4 mg tab":["ค"],"Levofloxacin 500 mg tab":["ง"],"Diazepam inj. 10 mg/amp":["ก"],"Hista oph":["นอกบัญชี"],"Chloramphenicol eye drop":["ค"],"Phenobarbital inj.":["ก"],"Pyridostigmine 60 mg":["ก"],"Clonazepam 0.5 mg":["ข"],"Fondaparinux inj.":["ง"],"Baclofen 10 mg tab":["ข"],"Filgrastim 300 mcg inj.":["ง"],"Augmentin 1 Gm tab":["ค"],"Sertraline 50 mg":["ข"],"Morphine syrup 10 mg/5ml":["ค"],"Morphine MST 10 mg":["ค"],"Fenofibrate 300 mg":["ค"],"Seretide Evohaler 25/125":["ค"],"Lamotrigine 100 mg":["ค"],"Flixotide MDI":["ค"],"Haloperidol inj. 5 mg/amp":["ก"],"Kapanol 20 mg tab (Morphine SR capsule)":["ค"],"Trazodone 50 mg":["ค"],"Streptokinase 1.5 mu inj.":["ก"],"Dilantin 50,100 mg":["ก"],"Quetiapine 200 mg":["ง"],"Nortriptyline 25 mg":["ก"],"Heparin 25,000 unit/5ml":["ค"],"Cefazolin 1 Gm":["ก"],"Tramadol 50 cap":["ค"],"Budesonide 200 mcg MDI":["ก"]};
+const RB_NLEM = {"Finasteride 5 mg tab": ["ง"], "Nifedipine 5 mg cap": ["นอกบัญชี"], "Poly-oph eye drop": ["ค"], "Eltroxin 100 mcg tab": ["ก"], "Amitriptyline 10,25 mg": ["ก"], "Dextran 40 in NSS": ["นอกบัญชี"], "Symbicort 4.5/160": ["ข"], "Topiramate 50 mg": ["ค"], "Edoxaban 60 mg tab*": ["นอกบัญชี"], "Chlorpromazine 25,100 mg": ["ก"], "Seretide accuhaler 50/250": ["ข"], "Cycloprogynova tab": ["ข"], "Meropenem 500 , 1000 mg inj.": ["ง"], "Phenobarbital 30 mg tab": ["ก"], "Espogen 3000,4000 iu": ["จ(2)"], "Phenobarbital syr. 10 mg/ml": ["ง"], "Enoxaparin 60 mg/0.6 ml inj.": ["ค"], "Colistin 150 mg inj.": ["ง"], "Lorazepam 2 mg": ["ก"], "Calciferol (vit D2) 20,000 IU cap": ["ก"], "Levodopa + benserazide (200 + 50 mg)": ["ก"], "Augmentin 2.2 Gm inj.": ["ค"], "Ampicillin 1000 + Sulbactam 500 mg": ["ค"], "Benzathine Penicillin": ["ก"], "Haloperidol 5 mg tab": ["ก"], "Nifedipine SR 20 mg tab": ["ข"], "Vancomycin 1 Gm inj.": ["ง"], "Dilantin syr. 25mg/ml": ["ก"], "Tazocin 4.5 gm inj.": ["ง"], "Ciprofloxacin 200 mg inj": ["ค"], "Ticagrelor 90 mg": ["ง"], "Dabigatran 110 mg tab*": ["นอกบัญชี"], "Azathioprine 50 mg": ["ค"], "Tarivid ear drop (Ofloxacin)": ["ค"], "Tenofovir alafenamide 25 mg": ["ข"], "Montelukast 10 mg tab": ["ค"], "Loratadine 10 mg tab": ["ก"], "Valsartan 160 mg tab": ["นอกบัญชี"], "Mianserin 10,30 mg": ["ข"], "DAT (Diptheria antitoxin)": ["ก"], "Anoro ellipta 62.5/25": ["ค"], "Ritalin 10 mg": ["ค"], "Benzhexol 5 mg": ["ก"], "Ertapenam 1 g": ["ง"], "Dex-oph": ["ก"], "Trimetazidine 35 mg": ["นอกบัญชี"], "Donepezil 10 mg": ["จ(2)"], "Hydrocortisone inj": ["ก"], "Monteluklast 4 mg granule": ["ค"], "Clozapine 25,100 mg": ["ค"], "Risperidone 1 , 2 mg tab": ["ข"], "Ephedrine drop": ["ก"], "Erythropoietin": ["จ(2)"], "Chloramphenicol ear drop": ["ค"], "Perphenazine 8 mg": ["ก"], "Pioglitazone 30 mg tab": ["ข"], "Chloramphenicol eye ointment": ["ค"], "Shohl's solution": ["ก"], "Prednisolone 5 mg tab": ["ก"], "Ventolin 100 mcg MDI": ["ก"], "Oxymetholone 50 mg": ["ข"], "Omeprazole 20 mg cap": ["ก"], "Levofloxacin 750 mg inj.": ["ง"], "Fluoxetine 20 mg": ["ก"], "INH 100 mg tab": ["ก"], "HBIG 180 iu/ml inj.": ["ค"], "Atorvastatin 40 mg tab": ["ข"], "Tear naturale ED หลอด": ["ข"], "Ceftazidime inj.": ["ค"], "Cefoperazone sodium+Sulbactam sodium, sterile pwdr (500 mg+500 mg)/vial": ["ง"], "Seretide accuhaler 50/500": ["ข"], "Avamys": ["ข"], "Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)": ["ง"], "Manidipine 20 mg tab": ["ข"], "Clonazepam 2 mg": ["ข"], "Adenosine 6 mg/ml inj.": ["ก"], "Voluven": ["ง"], "Cefdinir syr.": ["นอกบัญชี"], "Opsil tear": ["นอกบัญชี"], "Hydroxyurea 500 mg": ["ค"], "Ezetimibe 10 mg": ["ค"], "Nicardipine 10 mg inj.": ["ค"], "Terramycin eye ointment": ["นอกบัญชี"], "Duratocin inj.": ["ก"], "KCl syrup 20 mEq/15 ml (500 mg/5ml)": ["ก"], "Sulbactam 2 Gm inj.": ["ง"], "Fentanyl transdermal patch 25 mcg/hr": ["ค"], "Mecobalamine 500 mcg": ["นอกบัญชี"], "Sulfasalazine 500 mg": ["ค"], "Iron (Eurofer)": ["ค"], "Levophed 4 mg/4 ml inj": ["ก"], "Insulatard penfill": ["ก"], "Methotrexate 2.5 mg": ["ค"], "Gabapentin 100 , 300, 400 mg": ["ง"], "Hydralazine inj.": ["ก"], "Verapamil 40 mg tab": ["ก"], "Azithromycin syr.": ["ข"], "Fosfomycin 2 Gm inj.": ["ง"], "Ibuprofen 200 , 400 mg tab": ["ก"], "Metoprolol 100 mg tab": ["ก"], "Tetracaine eye solution": ["ก"], "Depakin syr.": ["ก"], "Perphenazine 4,16 mg": ["ก"], "Acyclovir 400 mg inj.": ["ค"], "Diazepam 2 , 5 mg": ["ก"], "Amoxy-clavulanate IV inj 1.2 g": ["ค"], "Bisoprolol 2.5 mg tab": ["นอกบัญชี"], "Levetiracetam 500 mg tab": ["ง"], "Seretide Evohaler 25/250": ["ข"], "MTV drop": ["ก"], "Cytotec tab": ["จ(1)"], "Carvedilol 6.25, 25 mg tab": ["ค"], "ยาตามคู่มือจิตเวชที่แจกแล้ว": ["-"], "Mixtard penfill": ["ก"], "Ropinirole PR 2 mg": ["ง"], "Vit E drop": ["นอกบัญชี"], "Dilantin 250 mg/5 ml inj": ["ก"], "Hydroxy chloroquine 200 mg": ["ข"], "Cefotaxime 1 Gm iv": ["ค"], "Alfacalcidol 1 mcg": ["ข"], "Spiriva handihalor": ["ค"], "Lithium carbonate 300 mg": ["ก"], "Warfarin 1, 3, 5 mg tab": ["ค"], "Fluphenazine decanoate 25 , 50 mg/amp": ["ก"], "Apixaban 5 mg tab*": ["ง"], "Calcitriol (vit D3) 0.25 mcg cap": ["ค"], "Amiodarone 200 mg tab": ["ค"], "Ciprofloxacin 500 mg tab": ["ค"], "Morphine IR 10 mg tab": ["ค"], "Alfuzosin 10 mg": ["ค"], "Febuxostat 80 mg tab": ["ง"], "Bemiparin inj. 5000, 7500 IU": ["นอกบัญชี"], "Amikacin 500 mg inj.": ["ค"], "Clindamycin 300 mg cap": ["ข"], "Clindamycin 600 mg inj.": ["ข"], "Depakine 200 , 500 mg tab": ["ก"], "Doxazosin 2 , 4 mg tab": ["ค"], "Levofloxacin 500 mg tab": ["ง"], "Diazepam inj. 10 mg/amp": ["ก"], "Hista oph": ["ข"], "Chloramphenicol eye drop": ["ค"], "Phenobarbital inj.": ["ก"], "Pyridostigmine 60 mg": ["ก"], "Clonazepam 0.5 mg": ["ข"], "Fondaparinux inj.": ["ง"], "Baclofen 10 mg tab": ["ข"], "Filgrastim 300 mcg inj.": ["ง"], "Augmentin 1 Gm tab": ["ค"], "Sertraline 50 mg": ["ข"], "Morphine syrup 10 mg/5ml": ["ค"], "Morphine MST 10 mg": ["ค"], "Fenofibrate 300 mg": ["ค"], "Seretide Evohaler 25/125": ["ข"], "Lamotrigine 100 mg": ["ค"], "Flixotide MDI": ["ข"], "Haloperidol inj. 5 mg/amp": ["ก"], "Kapanol 20 mg tab (Morphine SR capsule)": ["ค"], "Trazodone 50 mg": ["ค"], "Streptokinase 1.5 mu inj.": ["ก"], "Dilantin 50,100 mg": ["ก"], "Quetiapine 200 mg": ["ค"], "Nortriptyline 25 mg": ["ก"], "Heparin 25,000 unit/5ml": ["ค"], "Cefazolin 1 Gm": ["ก"], "Tramadol 50 cap": ["ค"], "Budesonide 200 mcg MDI": ["ก"]};
 
 let rbAllRows = [];
 let rbCurrentTab = 'all';
@@ -1785,7 +1829,7 @@ function rbApplyFilter() {
 function rbRenderTable(rows) {
   const tbody = document.getElementById('rb-tblBody');
   if (!rows.length) {
-    tbody.innerHTML = '<tr><td colspan="5" class="rb-no-result">ไม่พบรายการยาที่ค้นหา</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" class="rb-no-result">ไม่พบรายการยาที่ค้นหา</td></tr>';
     return;
   }
   const nlemColors = {
@@ -1794,17 +1838,35 @@ function rbRenderTable(rows) {
     'จ(1)':{'bg':'#f3e5f5','fg':'#4a148c'},'จ(2)':{'bg':'#ede7f6','fg':'#311b92'},
     'นอกบัญชี':{'bg':'#f5f5f5','fg':'#757575'},'-':{'bg':'#f5f5f5','fg':'#9e9e9e'}
   };
+  // mapping ชื่อเดิม → ชื่อใหม่ NLEM 2569
+  const nlem69Map = {
+    'ก':'b','ข':'b','ค':'s','ง':'ex','จ(1)':'R1','จ(2)':'R2',
+    'นอกบัญชี':null,'-':null
+  };
+  const nlem69Colors = {
+    'b':{'bg':'#1565c0','fg':'#fff'},
+    's':{'bg':'#e65100','fg':'#fff'},
+    'ex':{'bg':'#880e4f','fg':'#fff'},
+    'R1':{'bg':'#4a148c','fg':'#fff'},
+    'R2':{'bg':'#311b92','fg':'#fff'}
+  };
   tbody.innerHTML = rows.map((r, i) => {
     const m = RB_META[r.group];
-    const condHtml = r.cond ? `<br><span class="rb-cond-tag">⚠ ${r.cond}</span>` : '';
+    const condHtml = r.cond ? `<br><span class="rb-cond-tag" style="${r.cond.startsWith('⭐')||r.cond.startsWith('🔄')?'background:#e8f5e9;color:#2e7d32;':''}"> ${r.cond}</span>` : '';
     const nlemCat = (RB_NLEM[r.name] || ['-'])[0];
     const nc = nlemColors[nlemCat] || nlemColors['-'];
     const nlemBadge = `<span style="background:${nc.bg};color:${nc.fg};border-radius:10px;padding:2px 9px;font-size:11px;font-weight:600;white-space:nowrap">${nlemCat === '-' ? '-' : nlemCat === 'นอกบัญชี' ? 'นอกบัญชี' : 'บัญชี ' + nlemCat}</span>`;
+    const newCode = nlem69Map[nlemCat];
+    const nc69 = newCode ? nlem69Colors[newCode] : null;
+    const nlem69Badge = newCode
+      ? `<span style="background:${nc69.bg};color:${nc69.fg};border-radius:6px;padding:2px 10px;font-size:12px;font-weight:700;letter-spacing:0.03em">${newCode}</span>`
+      : `<span style="color:#bdbdbd;font-size:12px">—</span>`;
     return `<tr>
       <td style="text-align:center;color:#90a4ae;font-size:12px">${i + 1}</td>
       <td>${r.name}${condHtml}</td>
       <td><span class="rb-cat-badge ${m.badge}"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${m.dot};margin-right:5px;vertical-align:middle;flex-shrink:0"></span>${m.label}</span></td>
       <td style="text-align:center">${nlemBadge}</td>
+      <td style="text-align:center">${nlem69Badge}</td>
       <td style="font-size:12px;color:#5f6368">${m.cond}</td>
     </tr>`;
   }).join('');
