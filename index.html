@@ -928,6 +928,19 @@
       <span class="nav-icon">🔄</span> ยา Refer back
     </div>
   </nav>
+
+  <nav class="nav-section">
+    <div class="nav-label">รายงาน</div>
+    <div class="nav-item" onclick="showPage('reporting')">
+      <span class="nav-icon">📋</span> ระบบรายงานเวชภัณฑ์
+    </div>
+    <div class="nav-item" onclick="showPage('meeting')">
+      <span class="nav-icon">📝</span> รายงานการประชุม พบส.10
+    </div>
+    <div class="nav-item" onclick="showPage('schedule')">
+      <span class="nav-icon">📅</span> ตารางการประชุม พบส.10
+    </div>
+  </nav>
 </aside>
 
 <!-- MAIN -->
@@ -1323,7 +1336,239 @@
       </div>
     </div>
 
-  </div><!-- /content -->
+    <!-- PAGE: REPORTING -->
+    <div class="page" id="page-reporting">
+      <div class="section-title">ระบบรายงานเวชภัณฑ์</div>
+
+      <!-- รายงาน 1: รายสัปดาห์ -->
+      <div style="background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:1.5rem 1.75rem;margin-bottom:1.25rem;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
+          <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#0a7c5c,#1d9e75);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📦</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#0a7c5c">รายงานรายสัปดาห์</div>
+            <div style="font-size:12.5px;color:var(--gray-500);margin-top:2px">กำหนดส่ง: ทุกสัปดาห์</div>
+          </div>
+          <span style="margin-left:auto;background:#e0f5ee;color:#0a7c5c;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px">รายสัปดาห์</span>
+        </div>
+
+        <div style="background:#f8fffe;border-radius:10px;border:1px solid #b2dfdb;padding:1rem 1.25rem;margin-bottom:0.85rem;">
+          <div style="font-size:13px;font-weight:700;color:#004d40;margin-bottom:6px">📋 ระบบจัดการคลังเวชภัณฑ์สำรองทางการแพทย์ รองรับสถานการณ์สงครามฯ</div>
+          <div style="font-size:12.5px;color:#5f6368;line-height:1.7;margin-bottom:10px">
+            รายงานข้อมูลคลังยาและเวชภัณฑ์สำรองผ่านระบบออนไลน์ของสำนักงานสาธารณสุขจังหวัดลำปาง เขต 1
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px">
+            <a href="https://rh1inventory.lpho.go.th/login" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:8px;background:#0a7c5c;color:#fff;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;transition:opacity 0.15s"
+               onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+              <span>🔑</span> เข้าสู่ระบบรายงาน
+            </a>
+            <a href="https://rh1inventory-mis.lpho.go.th/login" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0a7c5c;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid #0a7c5c;transition:opacity 0.15s"
+               onmouseover="this.style.opacity='0.78'" onmouseout="this.style.opacity='1'">
+              <span>📊</span> แดชบอร์ดรายงานข้อมูล
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:8px;align-items:flex-start;background:#fffde7;border-radius:8px;padding:10px 14px;border-left:3px solid #f9a825;">
+          <span style="font-size:14px;margin-top:1px">💡</span>
+          <div style="font-size:12px;color:#5f6368;line-height:1.6">
+            กรอกข้อมูลคลังยาและเวชภัณฑ์สำรองผ่านลิงก์ <strong>เข้าสู่ระบบรายงาน</strong> จากนั้นสามารถดูสรุปภาพรวมได้จากลิงก์ <strong>แดชบอร์ดรายงานข้อมูล</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- รายงาน 2: รายไตรมาส -->
+      <div style="background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:1.5rem 1.75rem;margin-bottom:1.25rem;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
+          <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#1565c0,#1976d2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📊</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#1565c0">รายงานการบริหารเวชภัณฑ์ รายไตรมาส</div>
+            <div style="font-size:12.5px;color:var(--gray-500);margin-top:2px">กำหนดส่ง: ทุก 3 เดือน เริ่มต้นเดือนตุลาคม</div>
+          </div>
+          <span style="margin-left:auto;background:#e3f2fd;color:#1565c0;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px">รายไตรมาส</span>
+        </div>
+
+        <!-- Timeline ไตรมาส -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1rem;">
+          <div style="background:#e3f2fd;border-radius:9px;padding:10px;text-align:center;border:1px solid #bbdefb;">
+            <div style="font-size:11px;font-weight:700;color:#1565c0">ไตรมาส 1</div>
+            <div style="font-size:10.5px;color:#5f6368;margin-top:3px">ต.ค. – ธ.ค.</div>
+          </div>
+          <div style="background:#e3f2fd;border-radius:9px;padding:10px;text-align:center;border:1px solid #bbdefb;">
+            <div style="font-size:11px;font-weight:700;color:#1565c0">ไตรมาส 2</div>
+            <div style="font-size:10.5px;color:#5f6368;margin-top:3px">ม.ค. – มี.ค.</div>
+          </div>
+          <div style="background:#e3f2fd;border-radius:9px;padding:10px;text-align:center;border:1px solid #bbdefb;">
+            <div style="font-size:11px;font-weight:700;color:#1565c0">ไตรมาส 3</div>
+            <div style="font-size:10.5px;color:#5f6368;margin-top:3px">เม.ย. – มิ.ย.</div>
+          </div>
+          <div style="background:#e3f2fd;border-radius:9px;padding:10px;text-align:center;border:1px solid #bbdefb;">
+            <div style="font-size:11px;font-weight:700;color:#1565c0">ไตรมาส 4</div>
+            <div style="font-size:10.5px;color:#5f6368;margin-top:3px">ก.ค. – ก.ย.</div>
+          </div>
+        </div>
+
+        <div style="background:#f3f8ff;border-radius:10px;border:1px solid #bbdefb;padding:1rem 1.25rem;margin-bottom:0.85rem;">
+          <div style="font-size:13px;font-weight:700;color:#0d47a1;margin-bottom:6px">🌐 ระบบรายงานบริหารเวชภัณฑ์ออนไลน์</div>
+          <div style="font-size:12.5px;color:#5f6368;line-height:1.7;margin-bottom:10px">
+            บันทึกและส่งรายงานการบริหารเวชภัณฑ์รายไตรมาสผ่านระบบออนไลน์ของกองบริหารการสาธารณสุข (กบรส.)
+          </div>
+          <a href="http://203.157.3.54/hssd1/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;background:#1565c0;color:#fff;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;transition:opacity 0.15s"
+             onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+            <span>🌐</span> เข้าสู่ระบบรายงานไตรมาส
+          </a>
+        </div>
+
+        <div style="background:#f8f5ff;border-radius:10px;border:1px solid #d1c4e9;padding:1rem 1.25rem;">
+          <div style="font-size:13px;font-weight:700;color:#4a148c;margin-bottom:8px">📧 ส่งไฟล์รายงานบริหารเวชภัณฑ์รายไตรมาส</div>
+          <div style="font-size:12.5px;color:#5f6368;line-height:1.7;margin-bottom:10px">
+            หลังบันทึกข้อมูลแล้ว ให้ส่งไฟล์รายงานมายัง <strong>กลุ่มงาน คบส. สสจ.ปัตตานี</strong>
+          </div>
+
+          <!-- เทมเพลต Excel -->
+          <div style="background:#fff;border-radius:8px;border:1px solid #c8e6c9;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:200px;">
+              <span style="font-size:22px">📂</span>
+              <div>
+                <div style="font-size:12.5px;font-weight:700;color:#1b5e20">เทมเพลต Excel รายงานบริหารเวชภัณฑ์</div>
+                <div style="font-size:11px;color:#5f6368;margin-top:2px">ไฟล์แบบฟอร์มสำหรับทุกโรงพยาบาลในจังหวัดปัตตานี</div>
+              </div>
+            </div>
+            <a href="https://drive.google.com/drive/folders/14kTvwt2dcDgJm5oa6tTCRv0EQJzj5Bap?usp=sharing"
+               target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:7px;background:#1e8e3e;color:#fff;padding:8px 16px;border-radius:9px;font-size:12.5px;font-weight:600;text-decoration:none;white-space:nowrap;transition:opacity 0.15s"
+               onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+              <span>⬇️</span> ดาวน์โหลดเทมเพลต
+            </a>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <div style="background:#ede7f6;border-radius:8px;padding:8px 16px;display:flex;align-items:center;gap:8px;">
+              <span style="font-size:15px">✉️</span>
+              <span style="font-size:13px;font-weight:600;color:#311b92;letter-spacing:0.02em">Fdatani@gmail.com</span>
+            </div>
+            <a href="mailto:Fdatani@gmail.com?subject=รายงานบริหารเวชภัณฑ์รายไตรมาส"
+               style="display:inline-flex;align-items:center;gap:7px;background:#7b1fa2;color:#fff;padding:8px 16px;border-radius:9px;font-size:12.5px;font-weight:600;text-decoration:none;transition:opacity 0.15s"
+               onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+              <span>📤</span> เปิดอีเมลส่งรายงาน
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer note -->
+      <div style="text-align:center;font-size:11.5px;color:var(--gray-600);padding:0.5rem 0 1rem;">
+        ระบบรายงานเวชภัณฑ์ จังหวัดปัตตานี | กลุ่มงานคุ้มครองผู้บริโภคและเภสัชสาธารณสุข สสจ.ปัตตานี
+      </div>
+    </div><!-- /page-reporting -->
+
+    <!-- PAGE: MEETING -->
+    <div class="page" id="page-meeting">
+      <div class="section-title">รายงานการประชุม พบส.10</div>
+
+      <div style="background:#fff;border-radius:14px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:1.5rem 1.75rem;margin-bottom:1.25rem;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#e65100,#f57c00);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0">📝</div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#e65100">รายงานการประชุมคณะกรรมการพัฒนาระบบยา (พบส.10)</div>
+            <div style="font-size:12.5px;color:var(--gray-500);margin-top:3px">เขตสุขภาพที่ 12 · จังหวัดปัตตานี</div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div style="display:flex;align-items:center;gap:0;margin-bottom:1.25rem;">
+          <div style="background:#e0e0e0;border-radius:20px 0 0 20px;padding:7px 16px;font-size:12px;font-weight:600;color:#5f6368;display:flex;align-items:center;gap:6px;">
+            <span>🗓</span> มกราคม 2565
+          </div>
+          <div style="flex:1;height:3px;background:linear-gradient(to right,#ffcc80,#e65100);min-width:40px;"></div>
+          <div style="background:#e65100;border-radius:0 20px 20px 0;padding:7px 16px;font-size:12px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;">
+            <span>📍</span> ปัจจุบัน
+          </div>
+        </div>
+
+        <div style="font-size:13px;color:#5f6368;line-height:1.8;margin-bottom:1.25rem;">
+          รวบรวมรายงานการประชุมคณะกรรมการพัฒนาระบบยา (พบส.10) เขตสุขภาพที่ 12 วาระการประชุม และเอกสารประกอบการประชุมย้อนหลัง
+          จัดเก็บบน Google Drive ของกลุ่มงานคุ้มครองผู้บริโภคและเภสัชสาธารณสุข สสจ.ปัตตานี
+          โดยจัดเรียงตามเดือนและปีงบประมาณ
+        </div>
+
+        <a href="https://drive.google.com/drive/folders/1fwrN9PMJ4HcRR0AqFo2XV7yrOlI9TXMW?usp=sharing"
+           target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:10px;background:#e65100;color:#fff;padding:11px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity 0.15s;margin-bottom:1rem;"
+           onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+          <span style="font-size:18px">📂</span> เปิดโฟลเดอร์รายงานการประชุม
+        </a>
+
+        <!-- ประเภทเอกสาร -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:0.5rem;">
+          <div style="background:#fff8f3;border-radius:9px;border:1px solid #ffccbc;padding:12px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:20px">📄</span>
+            <div style="font-size:12px;font-weight:600;color:#bf360c">รายงานการประชุม</div>
+          </div>
+          <div style="background:#fff8f3;border-radius:9px;border:1px solid #ffccbc;padding:12px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:20px">📋</span>
+            <div style="font-size:12px;font-weight:600;color:#bf360c">วาระการประชุม</div>
+          </div>
+          <div style="background:#fff8f3;border-radius:9px;border:1px solid #ffccbc;padding:12px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:20px">📎</span>
+            <div style="font-size:12px;font-weight:600;color:#bf360c">เอกสารประกอบ</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;font-size:11.5px;color:var(--gray-600);padding:0.5rem 0 1rem;">
+        รายงานการประชุม พบส.10 · กลุ่มงานคุ้มครองผู้บริโภคและเภสัชสาธารณสุข สสจ.ปัตตานี
+      </div>
+    </div><!-- /page-meeting -->
+
+    <!-- PAGE: SCHEDULE -->
+    <div class="page" id="page-schedule">
+      <div class="section-title">ตารางการประชุม พบส.10 และการประชุมทางด้านเภสัชกรรม</div>
+
+      <!-- Calendar Controls -->
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:1rem;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button onclick="calNav(-1)" style="border:1px solid var(--gray-200);background:#fff;border-radius:8px;padding:6px 14px;font-size:15px;cursor:pointer;font-family:Sarabun,sans-serif;">&#9664;</button>
+          <div id="cal-title" style="font-size:15px;font-weight:700;color:#0a7c5c;min-width:160px;text-align:center;"></div>
+          <button onclick="calNav(1)" style="border:1px solid var(--gray-200);background:#fff;border-radius:8px;padding:6px 14px;font-size:15px;cursor:pointer;font-family:Sarabun,sans-serif;">&#9654;</button>
+          <button onclick="calGoToday()" style="border:1px solid #0a7c5c;background:#e0f5ee;border-radius:8px;padding:6px 14px;font-size:12.5px;cursor:pointer;font-family:Sarabun,sans-serif;color:#0a7c5c;font-weight:600;">วันนี้</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:5px;font-size:11.5px;color:#5f6368"><span style="width:12px;height:12px;border-radius:3px;background:#0a7c5c;display:inline-block"></span>ประชุม พบส.10</div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:11.5px;color:#5f6368"><span style="width:12px;height:12px;border-radius:3px;background:#1565c0;display:inline-block"></span>อบรม/Workshop</div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:11.5px;color:#5f6368"><span style="width:12px;height:12px;border-radius:3px;background:#c62828;display:inline-block"></span>วันหยุดราชการ</div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:11.5px;color:#5f6368"><span style="width:12px;height:12px;border-radius:3px;background:#e65100;display:inline-block"></span>ประเมิน/อื่นๆ</div>
+        </div>
+      </div>
+
+      <!-- Calendar Grid -->
+      <div style="background:#fff;border-radius:12px;border:1px solid var(--gray-200);box-shadow:var(--shadow);overflow:hidden;margin-bottom:1rem;">
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);background:linear-gradient(135deg,#0a7c5c,#1d9e75);">
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#ffd54f">อา</div>
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#fff">จ</div>
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#fff">อ</div>
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#fff">พ</div>
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#fff">พฤ</div>
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#fff">ศ</div>
+          <div style="padding:10px 4px;text-align:center;font-size:12.5px;font-weight:700;color:#ffd54f">ส</div>
+        </div>
+        <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);border-left:1px solid #f0f0f0;"></div>
+      </div>
+
+      <!-- Event detail -->
+      <div id="cal-detail" style="display:none;background:#fff;border-radius:12px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:1rem 1.25rem;margin-bottom:1rem;">
+        <div style="font-size:13px;font-weight:700;color:#0a7c5c;margin-bottom:8px" id="cal-detail-date"></div>
+        <div id="cal-detail-events"></div>
+      </div>
+
+      <div style="font-size:11.5px;color:var(--gray-600);text-align:center;padding-bottom:0.5rem;">
+        ข้อมูล ณ พฤษภาคม 2569 · กลุ่มงานคุ้มครองผู้บริโภคและเภสัชสาธารณสุข สสจ.ปัตตานี
+      </div>
+    </div><!-- /page-schedule -->
+
+</div><!-- /content -->
 </div><!-- /main -->
 
 <script>
@@ -1578,7 +1823,129 @@ function initCharts() {
   });
 }
 
-// ============ NAVIGATION ============
+
+// ============ SCHEDULE CALENDAR ============
+const SCH_EVENTS = [
+  {y:2026,m:4,d:5,  name:'ประเมินความปลอดภัยด้านยา',                            type:'other'},
+  {y:2026,m:4,d:6,  name:'ประเมินความปลอดภัยด้านยา',                            type:'other'},
+  {y:2026,m:4,d:14, name:'ประชุม พบส.10',                                        type:'pbs'},
+  {y:2026,m:4,d:15, name:'อบรมการใช้โปรแกรม INVS และ INVC',                     type:'train'},
+  {y:2026,m:4,d:20, name:'อบรมพัฒนาการจัดการเชื้อดื้อยา (Antibiogram)',         type:'train'},
+  {y:2026,m:4,d:26, name:'Workshop จัดทำชุดความรู้ RDU',                         type:'train'},
+  {y:2026,m:5,d:11, name:'ประชุม พบส.10',                                        type:'pbs'},
+  {y:2026,m:6,d:9,  name:'ประชุม พบส.10',                                        type:'pbs'},
+  {y:2026,m:7,d:13, name:'ประชุม พบส.10',                                        type:'pbs'},
+  {y:2026,m:8,d:10, name:'ประชุม พบส.10',                                        type:'pbs'},
+];
+
+const HOLIDAYS = [
+  {y:2025,m:0, d:1,  name:'วันขึ้นปีใหม่'},
+  {y:2025,m:1, d:3,  name:'วันมาฆบูชา (ชดเชย)'},
+  {y:2025,m:3, d:6,  name:'วันจักรี'},
+  {y:2025,m:3, d:7,  name:'วันจักรี (ชดเชย)'},
+  {y:2025,m:3, d:13, name:'วันสงกรานต์'},
+  {y:2025,m:3, d:14, name:'วันสงกรานต์'},
+  {y:2025,m:3, d:15, name:'วันสงกรานต์'},
+  {y:2025,m:4, d:1,  name:'วันแรงงานแห่งชาติ'},
+  {y:2025,m:4, d:4,  name:'วันฉัตรมงคล'},
+  {y:2025,m:4, d:5,  name:'วันฉัตรมงคล (ชดเชย)'},
+  {y:2025,m:4, d:11, name:'วันวิสาขบูชา'},
+  {y:2025,m:5, d:2,  name:'วันเฉลิมพระชนมพรรษา ร.10 (ชดเชย)'},
+  {y:2025,m:5, d:3,  name:'วันอาสาฬหบูชา'},
+  {y:2025,m:6, d:28, name:'วันเฉลิมพระชนมพรรษา ร.10'},
+  {y:2025,m:7, d:12, name:'วันเฉลิมพระชนมพรรษา ร.12'},
+  {y:2025,m:9, d:13, name:'วันคล้ายวันสวรรคต ร.9'},
+  {y:2025,m:9, d:23, name:'วันปิยมหาราช'},
+  {y:2025,m:11,d:5,  name:'วันคล้ายวันพระบรมราชสมภพ ร.9'},
+  {y:2025,m:11,d:10, name:'วันรัฐธรรมนูญ'},
+  {y:2025,m:11,d:31, name:'วันสิ้นปี'},
+  {y:2026,m:0, d:1,  name:'วันขึ้นปีใหม่'},
+  {y:2026,m:1, d:2,  name:'วันมาฆบูชา'},
+  {y:2026,m:3, d:6,  name:'วันจักรี'},
+  {y:2026,m:3, d:13, name:'วันสงกรานต์'},
+  {y:2026,m:3, d:14, name:'วันสงกรานต์'},
+  {y:2026,m:3, d:15, name:'วันสงกรานต์'},
+  {y:2026,m:4, d:1,  name:'วันแรงงานแห่งชาติ'},
+  {y:2026,m:4, d:4,  name:'วันฉัตรมงคล'},
+  {y:2026,m:4, d:13, name:'วันพืชมงคล'},
+  {y:2026,m:5, d:1,  name:'วันหยุดชดเชยวันวิสาขบูชา'},
+  {y:2026,m:5, d:3,  name:'วันเฉลิมพระชนมพรรษาสมเด็จพระนางเจ้าฯ พระบรมราชินี'},
+  {y:2026,m:6, d:28, name:'วันเฉลิมพระชนมพรรษา ร.10'},
+  {y:2026,m:6, d:29, name:'วันอาสาฬหบูชา'},
+  {y:2026,m:6, d:30, name:'วันเข้าพรรษา'},
+  {y:2026,m:7, d:12, name:'วันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้าสิริกิติ์ฯ และวันแม่แห่งชาติ'},
+  {y:2026,m:9, d:13, name:'วันนวมินทรมหาราช'},
+  {y:2026,m:9, d:23, name:'วันปิยมหาราช'},
+  {y:2026,m:11,d:7,  name:'วันหยุดชดเชยวันคล้ายวันพระบรมราชสมภพ ร.9 และวันพ่อแห่งชาติ'},
+  {y:2026,m:11,d:10, name:'วันรัฐธรรมนูญ'},
+  {y:2026,m:11,d:31, name:'วันสิ้นปี'},
+];
+
+const TH_MONTHS = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน',
+                   'กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+const EV_COLOR = {pbs:'#0a7c5c',train:'#1565c0',other:'#e65100'};
+const EV_BG    = {pbs:'#e0f5ee',train:'#e3f2fd',other:'#fff3e0'};
+
+let calYear, calMonth;
+
+function calInit() {
+  const now = new Date();
+  calYear = now.getFullYear(); calMonth = now.getMonth();
+  calRender();
+}
+function calNav(dir) {
+  calMonth += dir;
+  if (calMonth > 11) { calMonth=0; calYear++; }
+  if (calMonth <  0) { calMonth=11; calYear--; }
+  calRender();
+  document.getElementById('cal-detail').style.display='none';
+}
+function calGoToday() {
+  const now = new Date();
+  calYear=now.getFullYear(); calMonth=now.getMonth();
+  calRender();
+  document.getElementById('cal-detail').style.display='none';
+}
+function calRender() {
+  const title = document.getElementById('cal-title');
+  if (!title) return;
+  title.textContent = TH_MONTHS[calMonth] + ' ' + (calYear+543);
+  const firstDay = new Date(calYear, calMonth, 1).getDay();
+  const days = new Date(calYear, calMonth+1, 0).getDate();
+  const today = new Date();
+  const evMap={}, holMap={};
+  SCH_EVENTS.forEach(e=>{ if(e.y===calYear&&e.m===calMonth){ if(!evMap[e.d])evMap[e.d]=[]; evMap[e.d].push(e); }});
+  HOLIDAYS.forEach(h=>{ if(h.y===calYear&&h.m===calMonth) holMap[h.d]=h.name; });
+  let html='';
+  for(let i=0;i<firstDay;i++) html+=`<div style="min-height:80px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:#fafafa;"></div>`;
+  for(let d=1;d<=days;d++){
+    const dow=(firstDay+d-1)%7;
+    const isToday=(calYear===today.getFullYear()&&calMonth===today.getMonth()&&d===today.getDate());
+    const isSun=dow===0, isSat=dow===6, isHol=!!holMap[d], hasEv=!!evMap[d];
+    let bg=isToday?'#fffde7':(isSun||isHol)?'#fff5f5':isSat?'#f9f9ff':'#fff';
+    let numSt=isToday?'background:#0a7c5c;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;':(isSun||isHol)?'color:#c62828;':isSat?'color:#1565c0;':'color:#333;';
+    let inner='';
+    if(isHol) inner+=`<div style="font-size:9px;color:#c62828;background:#fce4ec;border-radius:3px;padding:1px 3px;margin-top:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis" title="${holMap[d]}">${holMap[d]}</div>`;
+    if(evMap[d]) evMap[d].forEach(e=>{ inner+=`<div style="font-size:9px;color:${EV_COLOR[e.type]};background:${EV_BG[e.type]};border-left:2px solid ${EV_COLOR[e.type]};border-radius:0 3px 3px 0;padding:1px 3px;margin-top:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis" title="${e.name}">${e.name}</div>`; });
+    html+=`<div onclick="calShowDetail(${d})" style="min-height:80px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:${bg};padding:5px 4px;cursor:${(hasEv||isHol)?'pointer':'default'};overflow:hidden;"><div style="font-size:13px;font-weight:700;${numSt}">${d}</div>${inner}</div>`;
+  }
+  const rem=(firstDay+days)%7; if(rem) for(let i=0;i<7-rem;i++) html+=`<div style="min-height:80px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:#fafafa;"></div>`;
+  document.getElementById('cal-grid').innerHTML=html;
+}
+function calShowDetail(d){
+  const evs=SCH_EVENTS.filter(e=>e.y===calYear&&e.m===calMonth&&e.d===d);
+  const hol=HOLIDAYS.find(h=>h.y===calYear&&h.m===calMonth&&h.d===d);
+  if(!evs.length&&!hol) return;
+  document.getElementById('cal-detail-date').textContent=`📅 ${d} ${TH_MONTHS[calMonth]} ${calYear+543}`;
+  let html='';
+  if(hol) html+=`<div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fce4ec;border-radius:8px;margin-bottom:6px;"><span style="font-size:16px">🔴</span><span style="font-size:13px;font-weight:600;color:#c62828">${hol.name}</span></div>`;
+  evs.forEach(e=>{ const icon=e.type==='pbs'?'🟢':e.type==='train'?'🔵':'🟠'; html+=`<div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:${EV_BG[e.type]};border-radius:8px;margin-bottom:6px;border-left:3px solid ${EV_COLOR[e.type]};"><span style="font-size:16px">${icon}</span><span style="font-size:13px;font-weight:600;color:${EV_COLOR[e.type]}">${e.name}</span></div>`; });
+  document.getElementById('cal-detail-events').innerHTML=html;
+  document.getElementById('cal-detail').style.display='block';
+  document.getElementById('cal-detail').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -1589,13 +1956,17 @@ function showPage(name) {
     dashboard: 'ภาพรวมระบบบริหารยาและเวชภัณฑ์',
     hospital: 'กรอบรายการยาและเวชภัณฑ์ โรงพยาบาลปัตตานี',
     joint: 'รายการยาร่วม ปีงบประมาณ 2569 จังหวัดปัตตานี',
-    referback: 'ฐานข้อมูลรายการยา Refer back จังหวัดปัตตานี'
+    referback: 'ฐานข้อมูลรายการยา Refer back จังหวัดปัตตานี',
+    reporting: 'ระบบรายงานเวชภัณฑ์ จังหวัดปัตตานี',
+    meeting: 'รายงานการประชุม พบส.10',
+    schedule: 'ตารางการประชุม พบส.10 และการประชุมทางด้านเภสัชกรรม'
   };
   document.getElementById('pageTitle').textContent = titles[name];
   
   if (name === 'hospital') { hospPage = 1; renderHospTable(); }
   if (name === 'joint') { jointPage = 1; renderJointTable(); }
   if (name === 'referback') { initReferLists(); }
+  if (name === 'schedule') { calInit(); }
 }
 
 // ============ HOSPITAL TABLE ============
