@@ -2099,8 +2099,8 @@ const RB_DATA = {
       {no:"82",name:"Spiriva handihalor"},{no:"83",name:"Streptokinase 1.5 mu inj."},{no:"84",name:"Symbicort 4.5/160"},
       {no:"85",name:"Tenofovir alafenamide 25 mg"},{no:"86",name:"Terramycin eye ointment"},{no:"87",name:"Tramadol 50 cap"},
       {no:"88",name:"Ventolin 100 mcg MDI"},{no:"89",name:"Verapamil 40 mg tab",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},{no:"90",name:"Voluven"},
-      {no:"91",name:"Warfarin 1, 3, 5 mg tab"},{no:"92",name:"Ropinirole PR 2 mg",cond:"🔄 ย้ายจากกลุ่มเหลือง ปี 2569"},
-      {no:"93",name:"ยาตามคู่มือจิตเวชที่แจกแล้ว"}
+      {no:"91",name:"Warfarin 1, 3, 5 mg tab"},
+      {no:"92",name:"ยาตามคู่มือจิตเวชที่แจกแล้ว"}
     ]
   },
   "เหลือง": {
@@ -2111,7 +2111,7 @@ const RB_DATA = {
       {no:"7",name:"Bisoprolol 2.5 mg tab"},{no:"8",name:"Calciferol (vit D2) 20,000 IU cap"},{no:"9",name:"Calcitriol (vit D3) 0.25 mcg cap"},
       {no:"10",name:"Cefdinir syr."},{no:"11",name:"Ciprofloxacin 200 mg inj"},{no:"12",name:"Clonazepam 0.5 mg"},
       {no:"13",name:"Cycloprogynova tab"},{no:"14",name:"Dabigatran 110 mg tab*"},{no:"15",name:"Depakin syr."},
-      {no:"16",name:"Dilantin syr. 25mg/ml"},{no:"17",name:"Donepezil 10 mg",cond:"มีเงื่อนไข: สั่งโดยแพทย์ neuromed และจิตแพทย์"},{no:"18",name:"Duratocin inj."},
+      {no:"16",name:"Dilantin syr. 25mg/ml"},{no:"17",name:"Donepezil 10 mg เงื่อนไข สั่ง หรือ telemedicineโดยแพทย์ neuromed และจิตแพทย์",cond:"มีเงื่อนไข: สั่งโดยแพทย์ neuromed และจิตแพทย์"},{no:"18",name:"Duratocin inj."},
       {no:"19",name:"Edoxaban 60 mg tab*"},{no:"20",name:"Erythropoietin",cond:"⭐ เพิ่มใหม่ปี 2569"},
       {no:"21",name:"Espogen 3000,4000 iu",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"22",name:"Febuxostat 80 mg tab"},{no:"23",name:"Fenofibrate 300 mg"},
       {no:"24",name:"Fentanyl transdermal patch 25 mcg/hr"},{no:"25",name:"Filgrastim 300 mcg inj."},{no:"26",name:"Flixotide MDI"},
@@ -2121,19 +2121,20 @@ const RB_DATA = {
       {no:"36",name:"Methotrexate 2.5 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"37",name:"Mianserin 10,30 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"38",name:"MTV drop"},
       {no:"39",name:"Oxymetholone 50 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"40",name:"Perphenazine 4,16 mg",cond:"⭐ เพิ่มขนาดยาใหม่ปี 2569"},{no:"41",name:"Phenobarbital inj."},
       {no:"42",name:"Pyridostigmine 60 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"43",name:"Ritalin 10 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},
-      {no:"44",name:"Seretide accuhaler 50/500"},{no:"45",name:"Sulfasalazine 500 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"46",name:"Tetracaine eye solution"},
-      {no:"47",name:"Ticagrelor 90 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"48",name:"Topiramate 50 mg"},{no:"49",name:"Trazodone 50 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},
-      {no:"50",name:"Trimetazidine 35 mg"},{no:"51",name:"Valsartan 160 mg tab"},{no:"52",name:"Vit E drop"},
-      {no:"53",name:"DAT (Diptheria antitoxin)",cond:"🔄 ย้ายจากกลุ่มแดง ปี 2569"}]
+      {no:"44",name:"Ropinirole PR 2 mg"},
+      {no:"45",name:"Seretide accuhaler 50/500"},{no:"46",name:"Sulfasalazine 500 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"47",name:"Tetracaine eye solution"},
+      {no:"48",name:"Ticagrelor 90 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},{no:"49",name:"Topiramate 50 mg"},{no:"50",name:"Trazodone 50 mg",cond:"⭐ เพิ่มใหม่ปี 2569"},
+      {no:"51",name:"Trimetazidine 35 mg"},{no:"52",name:"Valsartan 160 mg tab"},{no:"53",name:"Vit E drop"}]
   },
   "แดง": {
     category: "3. โรงพยาบาลปัตตานี จ่ายยาครบ",
     drugs: [
       {no:"1",name:"Augmentin 2.2 Gm inj."},{no:"2",name:"Azathioprine 50 mg"},
-      {no:"3",name:"Ephedrine drop"},{no:"4",name:"Heparin 25,000 unit/5ml"},{no:"5",name:"Kapanol 20 mg tab (Morphine SR capsule)"},
-      {no:"6",name:"Phenobarbital syr. 10 mg/ml"},{no:"7",name:"Shohl's solution"},
-      {no:"8",name:"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)"},{no:"9",name:"Tarivid ear drop (Ofloxacin)"},
-      {no:"10",name:"Tear naturale ED หลอด"}
+      {no:"3",name:"DAT (Diptheria antitoxin)"},
+      {no:"4",name:"Ephedrine drop"},{no:"5",name:"Heparin 25,000 unit/5ml"},{no:"6",name:"Kapanol 20 mg tab (Morphine SR capsule )"},
+      {no:"7",name:"Phenobarbital syr. 10 mg/ml"},{no:"8",name:"Shohl's solution"},
+      {no:"9",name:"Spiolto respimat 2.5/2.5 mcg (ขวดจริงและ refill)"},{no:"10",name:"Tarivid ear drop (Ofloxacin)"},
+      {no:"11",name:"Tear naturale ED หลอด"}
     ]
   },
   "DUE": {
